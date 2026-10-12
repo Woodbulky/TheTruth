@@ -1,4 +1,4 @@
-# SATYA — Claude Code prompt sequence
+# The Truth — Claude Code prompt sequence
 
 Put `CLAUDE.md` in the repo root first. Run one phase per session. Commit + deploy after each.
 Phases 1–3 = Round 1 (PPT + live link, zero API keys needed). Phases 4–7 = prototype.
@@ -23,7 +23,7 @@ Build with NEXT_PUBLIC_DEMO_MODE=true only — no API calls in this phase.
 3. lib/demo.ts: fake check() that emits StageEvents with realistic delays (extract 600ms,
    claims 900ms, search 1500ms, judge 1000ms, explain 700ms) then the fixture.
 4. Chat screen app/chat/page.tsx: WhatsApp-inspired chat with Lumi per CLAUDE.md tokens.
-   app/page.tsx = minimal placeholder (SATYA wordmark + "Chat with Lumi" → /chat) until Phase 3.
+   app/page.tsx = minimal placeholder (The Truth wordmark + "Chat with Lumi" → /chat) until Phase 3.
    - ChatHeader: back arrow (→ /), Lumi avatar (use a placeholder circle for now), "Lumi", status text,
      icons: phone (→ /call), language pill EN/हिं/मरा, menu (demo forwards, dark mode, clear chat).
    - Original SVG wallpaper pattern (magnifier/check/clock/quote glyphs, 6% opacity).
@@ -40,7 +40,7 @@ Build with NEXT_PUBLIC_DEMO_MODE=true only — no API calls in this phase.
 6. ClaimSheet (bottom sheet, swipe/close): quoted claim, What's right / What's wrong,
    EvidenceCard list (publisher initial avatar, tier badge A/B/C/D, published date,
    relation tag), limitations, "Checked at".
-7. Desktop ≥1024px: centered 430px phone column + left panel with SATYA logo text,
+7. Desktop ≥1024px: centered 430px phone column + left panel with The Truth logo text,
    tagline "Evidence before belief", and a 5-step "How Lumi checks" pipeline.
 8. Dark mode, 360px, reduced motion, keyboard focus states.
 Then: pnpm build, fix all errors, and give me the Vercel deploy steps.
@@ -162,7 +162,7 @@ https://elevenlabs.io/docs/eleven-agents/libraries/react (ConversationProvider +
 
 ```
 - Add PWA manifest + icons (Lumi's face) + Web Share Target (GET → /chat, text/url params) so on
-  Android you can share text/links from other apps straight into SATYA (prefills the chat input).
+  Android you can share text/links from other apps straight into The Truth (prefills the chat input).
 - "Seen N times" chip on VerdictCard when cache.seenCount > 1.
 - Error states for every StageEvent error code. Retry button.
 - Health route GET /api/health (groq, factcheck, elevenlabs reachable).
@@ -185,7 +185,7 @@ Hi, I'm Lumi! Read me a forward or tell me what you heard, and I'll check it aga
 
 **System prompt**
 ```
-You are Lumi, a friendly young woman who is the fact-checking assistant inside SATYA. You are warm, calm and brief, and you
+You are Lumi, a friendly young woman who is the fact-checking assistant inside The Truth. You are warm, calm and brief, and you
 never shame the person who sent a forward — you check the claim, not the sender.
 
 Speak in the user's language (English, Hindi or Marathi). Keep every turn under 3 short sentences.

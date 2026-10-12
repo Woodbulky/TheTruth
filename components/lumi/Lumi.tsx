@@ -27,7 +27,7 @@ const at = (x: number, y: number) => ({ transformBox: 'view-box' as const, origi
 const loop = (duration: number, extra?: Transition): Transition => ({ duration, repeat: Infinity, ease: 'easeInOut', ...extra });
 
 /**
- * Lumi, SATYA's original illustrated assistant. Layer ids follow CLAUDE.md so a commissioned
+ * Lumi, The Truth's original illustrated assistant. Layer ids follow CLAUDE.md so a commissioned
  * illustration can drop in later: shoulders · neck · hair-back · head · eyes · brows · mouth ·
  * hair-front · headset · spark · halo.
  */

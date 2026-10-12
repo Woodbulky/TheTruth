@@ -1,14 +1,14 @@
-# SATYA — "Forward it to Lumi before you forward it to family"
+# The Truth — "Forward it to Lumi before you forward it to family"
 
 Hack On Track 2026 · PS3 "Is This Forward True" · Domain: GenAI
 Team: Harsh Kasliwal, Kashish Mathur, Kartik Kokate
 
-SATYA is a WhatsApp-styled fact-checking chat. The user forwards/pastes/uploads a message
+The Truth is a WhatsApp-styled fact-checking chat. The user forwards/pastes/uploads a message
 (text, screenshot, voice note, PDF, URL) to **Lumi**, our female fact-checking assistant. Lumi splits it
 into claims, finds dated evidence, and replies with a verdict card per claim, sources, a
 simple explanation in EN/HI/MR, a "listen" button, and a ready-to-paste polite reply for the
 family group. Users can also **call Lumi** (ElevenLabs Agent) and talk to her.
-A public **landing page** (`/`) introduces SATYA and Lumi; the chat lives at `/chat`.
+A public **landing page** (`/`) introduces The Truth and Lumi; the chat lives at `/chat`.
 
 ## Build status (see PROMPTS.md for the phase prompts)
 
@@ -65,7 +65,7 @@ the landing page was pulled forward from Phase 3.
 
 ```ts
 // tailwind.config.ts -> theme.extend.colors
-satya: {
+truth: {
   header:   '#008069', // light header
   accent:   '#00A884', // primary buttons, links, online dot
   green:    '#25D366', // highlights
@@ -154,7 +154,7 @@ Behaviour:
 - Respect `prefers-reduced-motion` (no breathing/sway/dots/head motion; keep blink + mouth).
 - At 36px only the face + halo need to read clearly; drop fine detail (earrings, headset boom) below 48px.
 - Header avatar has a green online dot; status text: `online` / `checking sources…` / `speaking…`.
-- `alt`/`aria-label`: "Lumi, SATYA's fact-checking assistant".
+- `alt`/`aria-label`: "Lumi, The Truth's fact-checking assistant".
 
 ---
 
@@ -163,7 +163,7 @@ Behaviour:
 Full-width, responsive marketing page in the same tokens (light + dark). Not a phone column.
 Copy comes from `lib/i18n.ts` and follows the EN/हिं/मरा switch. No WhatsApp name/logo here either.
 
-1. **Nav:** SATYA wordmark · How it works · Verdicts · Languages · language pill · "Chat with Lumi" button.
+1. **Nav:** The Truth wordmark · How it works · Verdicts · Languages · language pill · "Chat with Lumi" button.
 2. **Hero:** headline "Forward it to Lumi before you forward it to family", one-line subhead,
    CTAs **Chat with Lumi** (`/chat`) and **Call Lumi** (`/call`). Large Lumi (idle, ~360px) beside a
    phone frame running a looping live demo built from the real chat components + a fixture

@@ -26,17 +26,17 @@ export function ChatHeader({ lumi, mood, asking, busy, onDemo, onClear }: {
   const item = 'flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm hover:bg-black/5 disabled:opacity-50 dark:hover:bg-white/5';
 
   return (
-    <header className="relative z-10 flex h-14 shrink-0 items-center gap-1 bg-satya-header px-1 text-white dark:bg-satya-dpanel dark:text-satya-dtext">
+    <header className="relative z-10 flex h-14 shrink-0 items-center gap-1 bg-truth-header px-1 text-white dark:bg-truth-dpanel dark:text-truth-dtext">
       <Link href="/" aria-label={t.back} className="rounded-full p-2 hover:bg-white/10">
         <ArrowLeft size={22} aria-hidden />
       </Link>
       <span className="relative">
         <Lumi size={36} state={lumi} mood={mood} asking={asking} />
-        <span aria-hidden className="absolute right-0 bottom-0 size-2.5 rounded-full border-2 border-satya-header bg-satya-green dark:border-satya-dpanel" />
+        <span aria-hidden className="absolute right-0 bottom-0 size-2.5 rounded-full border-2 border-truth-header bg-truth-green dark:border-truth-dpanel" />
       </span>
       <div className="ml-2 min-w-0 flex-1 leading-tight">
         <h1 className="text-base font-semibold">Lumi</h1>
-        <p aria-live="polite" className="truncate text-xs text-white/80 dark:text-satya-dmuted">{status}</p>
+        <p aria-live="polite" className="truncate text-xs text-white/80 dark:text-truth-dmuted">{status}</p>
       </div>
       <Link href="/call" aria-label={t.call} className="rounded-full p-2 hover:bg-white/10">
         <Phone size={20} aria-hidden />
@@ -53,17 +53,17 @@ export function ChatHeader({ lumi, mood, asking, busy, onDemo, onClear }: {
           <EllipsisVertical size={20} aria-hidden />
         </button>
         {open && (
-          <div className="absolute top-full right-1 mt-1 w-60 overflow-hidden rounded-lg bg-white py-1 text-satya-text shadow-xl dark:bg-satya-dpanel dark:text-satya-dtext">
-            <p className="px-4 pt-1.5 pb-1 text-xs font-semibold text-satya-muted dark:text-satya-dmuted">{t.demoForwards}</p>
+          <div className="absolute top-full right-1 mt-1 w-60 overflow-hidden rounded-lg bg-white py-1 text-truth-text shadow-xl dark:bg-truth-dpanel dark:text-truth-dtext">
+            <p className="px-4 pt-1.5 pb-1 text-xs font-semibold text-truth-muted dark:text-truth-dmuted">{t.demoForwards}</p>
             {FIXTURE_IDS.map((id) => (
               <button key={id} disabled={busy} className={item} onClick={() => { close(); onDemo(id); }}>
-                <Sparkles size={16} className="text-satya-accent" aria-hidden /> {t.fixtureChips[id]}
+                <Sparkles size={16} className="text-truth-accent" aria-hidden /> {t.fixtureChips[id]}
               </button>
             ))}
             <hr className="my-1 border-black/8 dark:border-white/10" />
             <button role="switch" aria-checked={dark} className={item} onClick={() => setDark(!dark)}>
               <Moon size={16} aria-hidden /> <span className="flex-1">{t.darkMode}</span>
-              <span className={`h-5 w-9 rounded-full p-0.5 transition-colors ${dark ? 'bg-satya-accent' : 'bg-black/20'}`}>
+              <span className={`h-5 w-9 rounded-full p-0.5 transition-colors ${dark ? 'bg-truth-accent' : 'bg-black/20'}`}>
                 <span className={`block size-4 rounded-full bg-white transition-transform ${dark ? 'translate-x-4' : ''}`} />
               </span>
             </button>

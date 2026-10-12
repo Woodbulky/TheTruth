@@ -36,15 +36,15 @@ export function ChatInput({ busy, inputRef, onSend, onAttach }: {
   const round = 'flex size-11 shrink-0 items-center justify-center rounded-full';
 
   return (
-    <div className="flex shrink-0 items-end gap-1.5 bg-satya-bg px-1.5 py-1.5 dark:bg-satya-dbg">
-      <div className="flex min-h-11 flex-1 items-end rounded-3xl bg-white dark:bg-satya-dpanel">
+    <div className="flex shrink-0 items-end gap-1.5 bg-truth-bg px-1.5 py-1.5 dark:bg-truth-dbg">
+      <div className="flex min-h-11 flex-1 items-end rounded-3xl bg-white dark:bg-truth-dpanel">
         <div ref={menu} className="relative">
           <button onClick={() => setOpen(!open)} disabled={busy} aria-label={t.attach} aria-expanded={open}
-            className={`${round} text-satya-muted disabled:opacity-50 dark:text-satya-dmuted`}>
+            className={`${round} text-truth-muted disabled:opacity-50 dark:text-truth-dmuted`}>
             <Paperclip size={22} className="-rotate-45" aria-hidden />
           </button>
           {open && (
-            <div className="absolute bottom-full left-0 mb-2 w-56 overflow-hidden rounded-xl bg-white py-1 shadow-xl dark:bg-satya-dpanel">
+            <div className="absolute bottom-full left-0 mb-2 w-56 overflow-hidden rounded-xl bg-white py-1 shadow-xl dark:bg-truth-dpanel">
               {ATTACH_ITEMS.map(({ type, Icon, color }) => (
                 <button key={type} onClick={() => { close(); onAttach(type); }}
                   className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm hover:bg-black/5 dark:hover:bg-white/5">
@@ -65,15 +65,15 @@ export function ChatInput({ busy, inputRef, onSend, onAttach }: {
           rows={1}
           placeholder={t.placeholder}
           aria-label={t.placeholder}
-          className="field-sizing-content max-h-32 min-h-11 flex-1 resize-none bg-transparent py-2.5 pr-3 text-[15px] outline-none placeholder:text-satya-muted dark:placeholder:text-satya-dmuted"
+          className="field-sizing-content max-h-32 min-h-11 flex-1 resize-none bg-transparent py-2.5 pr-3 text-[15px] outline-none placeholder:text-truth-muted dark:placeholder:text-truth-dmuted"
         />
       </div>
       {text.trim() ? (
-        <button onClick={send} disabled={busy} aria-label={t.send} className={`${round} bg-satya-accent text-white disabled:opacity-60`}>
+        <button onClick={send} disabled={busy} aria-label={t.send} className={`${round} bg-truth-accent text-white disabled:opacity-60`}>
           <SendHorizontal size={20} aria-hidden />
         </button>
       ) : (
-        <button onClick={() => onAttach('audio')} disabled={busy} aria-label={t.record} className={`${round} bg-satya-accent text-white disabled:opacity-60`}>
+        <button onClick={() => onAttach('audio')} disabled={busy} aria-label={t.record} className={`${round} bg-truth-accent text-white disabled:opacity-60`}>
           <Mic size={20} aria-hidden />
         </button>
       )}

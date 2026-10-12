@@ -9,11 +9,11 @@ import { Lumi } from '@/components/lumi/Lumi';
 export function CallScreen() {
   const t = STR[useLang()];
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-6 bg-linear-to-b from-[#0B3B36] to-satya-dbg px-4 text-center text-satya-dtext">
+    <div className="flex h-full flex-col items-center justify-center gap-6 bg-linear-to-b from-[#0B3B36] to-truth-dbg px-4 text-center text-truth-dtext">
       <Lumi size={220} />
       <p className="text-2xl font-semibold">Lumi</p>
-      <p className="max-w-xs text-satya-dmuted">{t.callSoon}</p>
-      <Link href="/chat" className="flex items-center gap-2 rounded-full bg-satya-accent px-6 py-3 font-semibold text-white hover:brightness-95">
+      <p className="max-w-xs text-truth-dmuted">{t.callSoon}</p>
+      <Link href="/chat" className="flex items-center gap-2 rounded-full bg-truth-accent px-6 py-3 font-semibold text-white hover:brightness-95">
         <MessageCircle size={20} aria-hidden /> {t.chatWithLumi}
       </Link>
     </div>

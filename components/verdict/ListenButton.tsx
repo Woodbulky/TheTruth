@@ -11,7 +11,7 @@ export function ListenButton() {
       disabled
       title={t.listenSoon}
       aria-label={`${t.listen} (${t.listenSoon})`}
-      className="flex items-center gap-1 rounded-full px-2 py-1 text-sm font-medium text-satya-header opacity-50 dark:text-satya-accent"
+      className="flex items-center gap-1 rounded-full px-2 py-1 text-sm font-medium text-truth-header opacity-50 dark:text-truth-accent"
     >
       <Volume2 size={16} aria-hidden /> {t.listen}
     </button>

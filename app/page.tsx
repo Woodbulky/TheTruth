@@ -6,7 +6,7 @@ import { VerdictShowcase } from '@/components/landing/VerdictShowcase';
 
 export default function Home() {
   return (
-    <div className="bg-white dark:bg-satya-dbg">
+    <div className="bg-white dark:bg-truth-dbg">
       <Nav />
       <main>
         <Hero />

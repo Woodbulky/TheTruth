@@ -50,7 +50,7 @@ export interface Strings {
 const en: Strings = {
   tagline: 'Evidence before belief',
   heroLine: 'Forward it to Lumi before you forward it to family',
-  lumiAria: "Lumi, SATYA's fact-checking assistant",
+  lumiAria: "Lumi, The Truth's fact-checking assistant",
   status: { online: 'online', checking: 'checking sources…', speaking: 'speaking…' },
   back: 'Back', call: 'Call Lumi', menu: 'Menu', language: 'Language',
   langFull: { en: 'English', hi: 'हिंदी', mr: 'मराठी' },
@@ -137,7 +137,7 @@ const en: Strings = {
 const hi: Strings = {
   tagline: 'विश्वास से पहले सबूत',
   heroLine: 'परिवार को फ़ॉरवर्ड करने से पहले, लूमी को फ़ॉरवर्ड करें',
-  lumiAria: 'लूमी, SATYA की फ़ैक्ट-चेकिंग असिस्टेंट',
+  lumiAria: 'लूमी, The Truth की फ़ैक्ट-चेकिंग असिस्टेंट',
   status: { online: 'ऑनलाइन', checking: 'स्रोत जाँच रही है…', speaking: 'बोल रही है…' },
   back: 'वापस', call: 'लूमी को कॉल करें', menu: 'मेन्यू', language: 'भाषा',
   langFull: en.langFull,
@@ -224,7 +224,7 @@ const hi: Strings = {
 const mr: Strings = {
   tagline: 'विश्वासाआधी पुरावा',
   heroLine: 'कुटुंबाला फॉरवर्ड करण्याआधी, लूमीला फॉरवर्ड करा',
-  lumiAria: 'लूमी, SATYA ची फॅक्ट-चेकिंग असिस्टंट',
+  lumiAria: 'लूमी, The Truth ची फॅक्ट-चेकिंग असिस्टंट',
   status: { online: 'ऑनलाइन', checking: 'स्रोत तपासत आहे…', speaking: 'बोलत आहे…' },
   back: 'मागे', call: 'लूमीला कॉल करा', menu: 'मेनू', language: 'भाषा',
   langFull: en.langFull,

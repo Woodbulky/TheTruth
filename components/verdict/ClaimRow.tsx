@@ -13,9 +13,9 @@ export function ClaimRow({ claim, onOpen }: { claim: Claim; onOpen: () => void }
         <span className="min-w-0 flex-1">
           <VerdictChip verdict={claim.verdict} size="sm" />
           <span className="mt-1 line-clamp-2 block text-sm font-medium">{claim.text}</span>
-          <span className="mt-0.5 block text-[13px] text-satya-muted dark:text-satya-dmuted">{claim.oneLine}</span>
+          <span className="mt-0.5 block text-[13px] text-truth-muted dark:text-truth-dmuted">{claim.oneLine}</span>
         </span>
-        <ChevronRight size={18} className="mt-1 shrink-0 text-satya-muted" aria-hidden />
+        <ChevronRight size={18} className="mt-1 shrink-0 text-truth-muted" aria-hidden />
       </button>
     </li>
   );

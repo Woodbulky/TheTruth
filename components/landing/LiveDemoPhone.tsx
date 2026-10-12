@@ -63,15 +63,15 @@ export function LiveDemoPhone({ onPose }: { onPose?: (p: LumiPose) => void }) {
   return (
     <figure className="relative w-[300px] shrink-0 sm:w-[320px]">
       <figcaption className="sr-only">{t.landing.demoLabel}</figcaption>
-      <div inert className="overflow-hidden rounded-[2.6rem] border-[10px] border-[#1F2C33] bg-satya-bg shadow-2xl shadow-satya-header/25 dark:border-[#2A3942] dark:bg-satya-dbg">
-        <div className="flex h-14 items-center gap-2 bg-satya-header px-3 text-white dark:bg-satya-dpanel dark:text-satya-dtext">
+      <div inert className="overflow-hidden rounded-[2.6rem] border-[10px] border-[#1F2C33] bg-truth-bg shadow-2xl shadow-truth-header/25 dark:border-[#2A3942] dark:bg-truth-dbg">
+        <div className="flex h-14 items-center gap-2 bg-truth-header px-3 text-white dark:bg-truth-dpanel dark:text-truth-dtext">
           <span className="relative">
             <Lumi size={34} state={pose.state} mood={pose.mood} />
-            <span className="absolute right-0 bottom-0 size-2.5 rounded-full border-2 border-satya-header bg-satya-green dark:border-satya-dpanel" />
+            <span className="absolute right-0 bottom-0 size-2.5 rounded-full border-2 border-truth-header bg-truth-green dark:border-truth-dpanel" />
           </span>
           <span className="leading-tight">
             <span className="block text-sm font-semibold">Lumi</span>
-            <span className="block text-[11px] text-white/80 dark:text-satya-dmuted">{status}</span>
+            <span className="block text-[11px] text-white/80 dark:text-truth-dmuted">{status}</span>
           </span>
         </div>
         <div className="chat-wallpaper flex h-[500px] flex-col justify-end overflow-hidden pb-2 text-left">
@@ -80,9 +80,9 @@ export function LiveDemoPhone({ onPose }: { onPose?: (p: LumiPose) => void }) {
           {reply?.kind === 'stage' && <StageBubble stages={reply.stages} tail />}
           {reply?.kind === 'verdict' && <VerdictCard result={reply.result} tail at={fixture?.at} />}
         </div>
-        <div className="flex items-center gap-2 bg-satya-bg px-2 pb-3 dark:bg-satya-dbg">
-          <span className="flex-1 truncate rounded-full bg-white px-4 py-2 text-sm text-satya-muted dark:bg-satya-dpanel dark:text-satya-dmuted">{t.placeholder}</span>
-          <span className="flex size-10 items-center justify-center rounded-full bg-satya-accent text-white"><Mic size={18} aria-hidden /></span>
+        <div className="flex items-center gap-2 bg-truth-bg px-2 pb-3 dark:bg-truth-dbg">
+          <span className="flex-1 truncate rounded-full bg-white px-4 py-2 text-sm text-truth-muted dark:bg-truth-dpanel dark:text-truth-dmuted">{t.placeholder}</span>
+          <span className="flex size-10 items-center justify-center rounded-full bg-truth-accent text-white"><Mic size={18} aria-hidden /></span>
         </div>
       </div>
     </figure>

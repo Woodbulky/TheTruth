@@ -1,4 +1,4 @@
-# SATYA — Forward it to Lumi before you forward it to family
+# The Truth — Forward it to Lumi before you forward it to family
 
 Hack On Track 2026 · PS3 "Is This Forward True". See `CLAUDE.md` for the full spec and `PROMPTS.md` for the build phases.
 

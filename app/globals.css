@@ -5,27 +5,27 @@
 @theme {
   --font-sans: ui-sans-serif, -apple-system, "Segoe UI", Roboto, "Noto Sans Devanagari", sans-serif;
 
-  --color-satya-header: #008069;
-  --color-satya-accent: #00A884;
-  --color-satya-green: #25D366;
-  --color-satya-bg: #EFEAE2;
-  --color-satya-out: #D9FDD3;
-  --color-satya-in: #FFFFFF;
-  --color-satya-text: #111B21;
-  --color-satya-muted: #667781;
-  --color-satya-tick: #53BDEB;
-  --color-satya-dbg: #0B141A;
-  --color-satya-dpanel: #202C33;
-  --color-satya-dout: #005C4B;
-  --color-satya-din: #202C33;
-  --color-satya-dtext: #E9EDEF;
-  --color-satya-dmuted: #8696A0;
-  --color-satya-lumi: #FFD166;
-  --color-satya-lumi-deep: #06D6A0;
+  --color-truth-header: #008069;
+  --color-truth-accent: #00A884;
+  --color-truth-green: #25D366;
+  --color-truth-bg: #EFEAE2;
+  --color-truth-out: #D9FDD3;
+  --color-truth-in: #FFFFFF;
+  --color-truth-text: #111B21;
+  --color-truth-muted: #667781;
+  --color-truth-tick: #53BDEB;
+  --color-truth-dbg: #0B141A;
+  --color-truth-dpanel: #202C33;
+  --color-truth-dout: #005C4B;
+  --color-truth-din: #202C33;
+  --color-truth-dtext: #E9EDEF;
+  --color-truth-dmuted: #8696A0;
+  --color-truth-lumi: #FFD166;
+  --color-truth-lumi-deep: #06D6A0;
 }
 
 body {
-  @apply bg-satya-bg text-satya-text dark:bg-satya-dbg dark:text-satya-dtext;
+  @apply bg-truth-bg text-truth-text dark:bg-truth-dbg dark:text-truth-dtext;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -33,17 +33,17 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-satya-accent);
+  outline: 2px solid var(--color-truth-accent);
   outline-offset: 2px;
 }
 
 /* Original wallpaper: magnifier, check, clock and quote glyphs at 6% opacity. */
 .chat-wallpaper {
-  background-color: var(--color-satya-bg);
+  background-color: var(--color-truth-bg);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cg fill='none' stroke='%23000' stroke-opacity='.06' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='24' cy='24' r='8'/%3E%3Cpath d='M30 30l7 7'/%3E%3Cpath d='M92 22l6 6 12-12'/%3E%3Ccircle cx='150' cy='40' r='10'/%3E%3Cpath d='M150 34v6l4 3'/%3E%3Cpath d='M40 92c-4 0-6 3-6 6s2 5 5 5c0 4-2 6-5 7M52 92c-4 0-6 3-6 6s2 5 5 5c0 4-2 6-5 7'/%3E%3Ccircle cx='118' cy='104' r='7'/%3E%3Cpath d='M123 109l6 6'/%3E%3Cpath d='M18 150l5 5 10-10'/%3E%3Ccircle cx='86' cy='160' r='8'/%3E%3Cpath d='M86 155v5l3 2'/%3E%3Cpath d='M150 146c-3 0-5 2-5 5s2 4 4 4c0 3-2 5-4 6M160 146c-3 0-5 2-5 5s2 4 4 4c0 3-2 5-4 6'/%3E%3C/g%3E%3C/svg%3E");
 }
 .dark .chat-wallpaper {
-  background-color: var(--color-satya-dbg);
+  background-color: var(--color-truth-dbg);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cg fill='none' stroke='%23fff' stroke-opacity='.06' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='24' cy='24' r='8'/%3E%3Cpath d='M30 30l7 7'/%3E%3Cpath d='M92 22l6 6 12-12'/%3E%3Ccircle cx='150' cy='40' r='10'/%3E%3Cpath d='M150 34v6l4 3'/%3E%3Cpath d='M40 92c-4 0-6 3-6 6s2 5 5 5c0 4-2 6-5 7M52 92c-4 0-6 3-6 6s2 5 5 5c0 4-2 6-5 7'/%3E%3Ccircle cx='118' cy='104' r='7'/%3E%3Cpath d='M123 109l6 6'/%3E%3Cpath d='M18 150l5 5 10-10'/%3E%3Ccircle cx='86' cy='160' r='8'/%3E%3Cpath d='M86 155v5l3 2'/%3E%3Cpath d='M150 146c-3 0-5 2-5 5s2 4 4 4c0 3-2 5-4 6M160 146c-3 0-5 2-5 5s2 4 4 4c0 3-2 5-4 6'/%3E%3C/g%3E%3C/svg%3E");
 }
 

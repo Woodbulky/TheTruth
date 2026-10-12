@@ -7,7 +7,7 @@ export function ForwardedBubble({ text, forwarded, label, tail, at }: {
   return (
     <Bubble side="out" tail={tail} at={at}>
       {forwarded && (
-        <span className="mb-0.5 flex items-center gap-1 text-[12.5px] text-satya-muted italic dark:text-satya-dmuted">
+        <span className="mb-0.5 flex items-center gap-1 text-[12.5px] text-truth-muted italic dark:text-truth-dmuted">
           <Forward size={14} aria-hidden /> {label}
         </span>
       )}

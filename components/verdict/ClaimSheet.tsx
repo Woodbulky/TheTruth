@@ -14,7 +14,7 @@ export function ClaimSheet({ claim, checkedAt, onClose }: { claim: Claim | null;
     <Sheet open={!!claim} onClose={onClose} title={t.claimDetails} closeLabel={t.close}>
       {claim && (
         <div className="space-y-4">
-          <blockquote className="border-l-4 border-satya-accent pl-3 text-[15px] italic">{claim.text}</blockquote>
+          <blockquote className="border-l-4 border-truth-accent pl-3 text-[15px] italic">{claim.text}</blockquote>
           <div className="space-y-1">
             <VerdictChip verdict={claim.verdict} size="lg" />
             <p className="text-sm">{claim.oneLine}</p>
@@ -34,14 +34,14 @@ export function ClaimSheet({ claim, checkedAt, onClose }: { claim: Claim | null;
           {claim.limitations.length > 0 && (
             <section>
               <h3 className="mb-1 text-sm font-semibold">{t.limitations}</h3>
-              <ul className="list-disc pl-5 text-sm text-satya-muted dark:text-satya-dmuted">
+              <ul className="list-disc pl-5 text-sm text-truth-muted dark:text-truth-dmuted">
                 {claim.limitations.map((l) => (
                   <li key={l}>{l}</li>
                 ))}
               </ul>
             </section>
           )}
-          <p className="text-xs text-satya-muted dark:text-satya-dmuted">
+          <p className="text-xs text-truth-muted dark:text-truth-dmuted">
             {t.checkedAt}{' '}
             {new Date(checkedAt).toLocaleString(`${lang}-IN`, { dateStyle: 'medium', timeStyle: 'short' })}
           </p>

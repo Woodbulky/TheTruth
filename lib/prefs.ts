@@ -11,11 +11,11 @@ const read = (k: string) => { try { return localStorage.getItem(k); } catch { re
 const write = (k: string, v: string) => { try { localStorage.setItem(k, v); } catch { /* private mode */ } };
 
 const LANGS: Lang[] = ['en', 'hi', 'mr'];
-const getLang = (): Lang => { const v = read('satya-lang') as Lang; return LANGS.includes(v) ? v : 'en'; };
+const getLang = (): Lang => { const v = read('truth-lang') as Lang; return LANGS.includes(v) ? v : 'en'; };
 export const useLang = () => useSyncExternalStore(subscribe, getLang, () => 'en' as Lang);
-export function setLang(l: Lang) { write('satya-lang', l); document.documentElement.lang = l; emit(); }
+export function setLang(l: Lang) { write('truth-lang', l); document.documentElement.lang = l; emit(); }
 export const nextLang = (l: Lang): Lang => LANGS[(LANGS.indexOf(l) + 1) % LANGS.length];
 
 const isDark = () => document.documentElement.classList.contains('dark');
 export const useDark = () => useSyncExternalStore(subscribe, isDark, () => false);
-export function setDark(d: boolean) { document.documentElement.classList.toggle('dark', d); write('satya-theme', d ? 'dark' : 'light'); emit(); }
+export function setDark(d: boolean) { document.documentElement.classList.toggle('dark', d); write('truth-theme', d ? 'dark' : 'light'); emit(); }

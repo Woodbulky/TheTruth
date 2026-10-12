@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Gallery } from './Gallery';
 
-export const metadata: Metadata = { title: 'Screens · SATYA', robots: { index: false } };
+export const metadata: Metadata = { title: 'Screens · The Truth', robots: { index: false } };
 
 export default function DemoPage() {
   return (

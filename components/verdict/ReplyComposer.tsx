@@ -23,18 +23,18 @@ export function ReplyComposer({ open, message, onClose }: { open: boolean; messa
 
   return (
     <Sheet open={open} onClose={onClose} title={t.replyTitle} closeLabel={t.close}>
-      <p className="mb-2 text-sm text-satya-muted dark:text-satya-dmuted">{t.replyHint}</p>
+      <p className="mb-2 text-sm text-truth-muted dark:text-truth-dmuted">{t.replyHint}</p>
       <textarea
         ref={ref}
         key={message}
         defaultValue={message}
         rows={6}
         aria-label={t.replyTitle}
-        className="w-full resize-none rounded-lg border border-black/10 bg-satya-out p-3 text-[15px] dark:border-white/10 dark:bg-satya-dout"
+        className="w-full resize-none rounded-lg border border-black/10 bg-truth-out p-3 text-[15px] dark:border-white/10 dark:bg-truth-dout"
       />
       <button
         onClick={copy}
-        className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-satya-accent py-2.5 font-semibold text-white hover:brightness-95"
+        className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-truth-accent py-2.5 font-semibold text-white hover:brightness-95"
       >
         {copied ? <Check size={18} aria-hidden /> : <Copy size={18} aria-hidden />}
         <span aria-live="polite">{copied ? t.copied : t.copy}</span>

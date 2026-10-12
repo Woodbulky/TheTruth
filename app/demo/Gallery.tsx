@@ -91,7 +91,7 @@ function Frame({ name, dark, src, children }: { name: string; dark?: boolean; sr
       if (!node) throw new Error('frame not ready');
       const a = document.createElement('a');
       a.href = await toPng(node, { pixelRatio: 2, width: 390, height: 844 });
-      a.download = `satya-${name}.png`;
+      a.download = `truth-${name}.png`;
       a.click();
     } catch {
       setErr(true);
@@ -102,7 +102,7 @@ function Frame({ name, dark, src, children }: { name: string; dark?: boolean; sr
     <figure className="flex flex-col items-center gap-3">
       <div
         ref={box}
-        className={`relative h-[844px] w-[390px] overflow-hidden rounded-[28px] shadow-2xl ring-1 ring-black/10 ${dark ? 'dark bg-satya-dbg text-satya-dtext' : 'bg-satya-bg text-satya-text'}`}
+        className={`relative h-[844px] w-[390px] overflow-hidden rounded-[28px] shadow-2xl ring-1 ring-black/10 ${dark ? 'dark bg-truth-dbg text-truth-dtext' : 'bg-truth-bg text-truth-text'}`}
       >
         {src
           ? <iframe ref={frame} src={src} title={name} width={390} height={844} className="border-0" />
@@ -110,7 +110,7 @@ function Frame({ name, dark, src, children }: { name: string; dark?: boolean; sr
       </div>
       <figcaption className="flex items-center gap-3 text-sm">
         <code>{name}</code>
-        <button onClick={download} className="inline-flex items-center gap-1.5 rounded-full bg-satya-accent px-3 py-1.5 font-semibold text-white hover:brightness-95">
+        <button onClick={download} className="inline-flex items-center gap-1.5 rounded-full bg-truth-accent px-3 py-1.5 font-semibold text-white hover:brightness-95">
           <Download size={16} aria-hidden /> Download PNG
         </button>
         {err && <span role="alert" className="text-[#E5484D]">Export failed, use a browser screenshot</span>}
@@ -138,11 +138,11 @@ function LumiPlayground() {
   }, [talk]);
 
   const field = 'flex flex-col gap-1 text-sm font-medium';
-  const select = 'rounded-lg border border-black/15 bg-white px-2 py-1.5 dark:border-white/15 dark:bg-satya-dpanel';
+  const select = 'rounded-lg border border-black/15 bg-white px-2 py-1.5 dark:border-white/15 dark:bg-truth-dpanel';
   return (
     <section className="mx-auto max-w-5xl px-4 pt-10">
       <h2 className="text-xl font-bold">Lumi playground</h2>
-      <div className="mt-4 flex flex-wrap items-end gap-4 rounded-2xl bg-white p-4 shadow dark:bg-satya-dpanel">
+      <div className="mt-4 flex flex-wrap items-end gap-4 rounded-2xl bg-white p-4 shadow dark:bg-truth-dpanel">
         <label className={field}>State
           <select value={state} onChange={(e) => setState(e.target.value as LumiState)} className={select}>
             {STATES.map((s) => <option key={s}>{s}</option>)}
@@ -163,7 +163,7 @@ function LumiPlayground() {
         {[36, 96, 220, 360].map((size) => (
           <figure key={size} className="flex flex-col items-center gap-2">
             <Lumi size={size} state={state} mood={mood} volume={volume} asking={asking} />
-            <figcaption className="text-xs text-satya-muted">{size}px</figcaption>
+            <figcaption className="text-xs text-truth-muted">{size}px</figcaption>
           </figure>
         ))}
       </div>

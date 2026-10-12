@@ -7,13 +7,13 @@ export function VoiceNoteBubble({ duration, playLabel, tail, at }: { duration: s
   return (
     <Bubble side="out" tail={tail} at={at}>
       <span className="flex w-60 items-center gap-2 py-1">
-        <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-satya-accent text-white"><Mic size={20} aria-hidden /></span>
-        <button type="button" aria-label={playLabel} className="text-satya-muted dark:text-satya-dmuted"><Play size={22} fill="currentColor" aria-hidden /></button>
+        <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-truth-accent text-white"><Mic size={20} aria-hidden /></span>
+        <button type="button" aria-label={playLabel} className="text-truth-muted dark:text-truth-dmuted"><Play size={22} fill="currentColor" aria-hidden /></button>
         <span aria-hidden className="flex h-6 flex-1 items-center gap-[2px]">
-          {BARS.map((h, i) => <span key={i} className="w-[3px] rounded-full bg-satya-muted/60 dark:bg-satya-dmuted/70" style={{ height: h }} />)}
+          {BARS.map((h, i) => <span key={i} className="w-[3px] rounded-full bg-truth-muted/60 dark:bg-truth-dmuted/70" style={{ height: h }} />)}
         </span>
       </span>
-      <span className="absolute bottom-1 left-14 text-[11px] text-satya-muted dark:text-satya-dmuted">{duration}</span>
+      <span className="absolute bottom-1 left-14 text-[11px] text-truth-muted dark:text-truth-dmuted">{duration}</span>
     </Bubble>
   );
 }

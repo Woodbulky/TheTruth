@@ -11,8 +11,8 @@ export function SidePanel() {
   return (
     <aside className="hidden w-[360px] flex-col justify-center gap-6 justify-self-end lg:flex">
       <div>
-        <p className="text-4xl font-extrabold tracking-[0.2em] text-satya-header dark:text-satya-accent">SATYA</p>
-        <p className="mt-1 text-lg text-satya-muted dark:text-satya-dmuted">{t.tagline}</p>
+        <p className="text-4xl font-extrabold tracking-[0.2em] text-truth-header dark:text-truth-accent">The Truth</p>
+        <p className="mt-1 text-lg text-truth-muted dark:text-truth-dmuted">{t.tagline}</p>
       </div>
       <section>
         <h2 className="mb-3 text-sm font-semibold tracking-wide uppercase">{t.howLumiChecks}</h2>
@@ -21,12 +21,12 @@ export function SidePanel() {
             const Icon = STEP_ICONS[i];
             return (
               <li key={s.title} className="flex gap-3">
-                <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-satya-accent/15 text-satya-header dark:text-satya-accent">
+                <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-truth-accent/15 text-truth-header dark:text-truth-accent">
                   <Icon size={18} aria-hidden />
                 </span>
                 <span>
                   <span className="block text-sm font-semibold">{i + 1}. {s.title}</span>
-                  <span className="text-sm text-satya-muted dark:text-satya-dmuted">{s.body}</span>
+                  <span className="text-sm text-truth-muted dark:text-truth-dmuted">{s.body}</span>
                 </span>
               </li>
             );

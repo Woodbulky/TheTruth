@@ -7,8 +7,8 @@ import type { Evidence } from '@/lib/types';
 const TIER_STYLE: Record<Evidence['tier'], string> = {
   A: 'bg-[#1FA855]/15 text-[#137a3c] dark:text-[#5fd68f]',
   B: 'bg-[#0b84c6]/15 text-[#0a6aa0] dark:text-[#6cc4f2]',
-  C: 'bg-black/8 text-satya-text dark:bg-white/10 dark:text-satya-dtext',
-  D: 'bg-black/5 text-satya-muted dark:bg-white/5 dark:text-satya-dmuted',
+  C: 'bg-black/8 text-truth-text dark:bg-white/10 dark:text-truth-dtext',
+  D: 'bg-black/5 text-truth-muted dark:bg-white/5 dark:text-truth-dmuted',
 };
 
 export function EvidenceCard({ e }: { e: Evidence }) {
@@ -22,14 +22,14 @@ export function EvidenceCard({ e }: { e: Evidence }) {
       <div className="flex items-center gap-2">
         <span
           aria-hidden
-          className="flex size-8 shrink-0 items-center justify-center rounded-full bg-satya-accent/15 font-semibold text-satya-header dark:text-satya-accent"
+          className="flex size-8 shrink-0 items-center justify-center rounded-full bg-truth-accent/15 font-semibold text-truth-header dark:text-truth-accent"
         >
           {e.publisher.charAt(0)}
         </span>
         <span className="min-w-0 flex-1">
           <span className="block truncate text-sm font-medium">{e.publisher}</span>
           {date && (
-            <span className="text-xs text-satya-muted dark:text-satya-dmuted">
+            <span className="text-xs text-truth-muted dark:text-truth-dmuted">
               {t.published} {date}
             </span>
           )}
@@ -39,7 +39,7 @@ export function EvidenceCard({ e }: { e: Evidence }) {
         </span>
       </div>
       <p className="mt-2 text-sm font-medium">{e.title}</p>
-      <p className="mt-1 text-sm text-satya-muted dark:text-satya-dmuted">“{e.excerpt}”</p>
+      <p className="mt-1 text-sm text-truth-muted dark:text-truth-dmuted">“{e.excerpt}”</p>
       <div className="mt-2 flex items-center justify-between">
         <span className="rounded-full border border-black/10 px-2 py-0.5 text-xs dark:border-white/15">
           {t.relations[e.relation]}
@@ -49,7 +49,7 @@ export function EvidenceCard({ e }: { e: Evidence }) {
             href={e.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 text-xs font-medium text-satya-header dark:text-satya-accent"
+            className="flex items-center gap-1 text-xs font-medium text-truth-header dark:text-truth-accent"
           >
             {t.openSource} <ExternalLink size={12} aria-hidden />
           </a>

@@ -43,13 +43,13 @@ export function MessageList({ msgs, busy, onDemo, onMore }: {
       {/* Welcome: static so it renders identically on server and client */}
       <div className="mb-3 flex flex-col items-center gap-2 px-6 text-center">
         <Lumi size={96} />
-        <span className="rounded-md bg-[#FFEECD] px-3 py-1 text-xs text-satya-text dark:bg-satya-dpanel dark:text-satya-dmuted">
+        <span className="rounded-md bg-[#FFEECD] px-3 py-1 text-xs text-truth-text dark:bg-truth-dpanel dark:text-truth-dmuted">
           {t.tagline}
         </span>
       </div>
       <Bubble side="in" tail>
         <p>{t.welcome}</p>
-        <p className="mt-3 mb-1 flex items-center gap-1 text-xs font-semibold text-satya-header dark:text-satya-accent">
+        <p className="mt-3 mb-1 flex items-center gap-1 text-xs font-semibold text-truth-header dark:text-truth-accent">
           <Sparkles size={14} aria-hidden /> {t.tryDemo}
         </p>
         <div className="flex flex-wrap gap-1.5">
@@ -96,7 +96,7 @@ function Chip({ children, ...p }: React.ButtonHTMLAttributes<HTMLButtonElement>)
   return (
     <button
       {...p}
-      className="rounded-full border border-satya-accent/40 bg-satya-accent/8 px-3 py-1 text-[13px] font-medium text-satya-header hover:bg-satya-accent/15 disabled:opacity-50 dark:text-satya-accent"
+      className="rounded-full border border-truth-accent/40 bg-truth-accent/8 px-3 py-1 text-[13px] font-medium text-truth-header hover:bg-truth-accent/15 disabled:opacity-50 dark:text-truth-accent"
     >
       {children}
     </button>

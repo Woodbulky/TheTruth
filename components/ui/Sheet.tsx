@@ -32,7 +32,7 @@ export function Sheet({ open, onClose, title, closeLabel, children }: {
         onClose={onClose}
         onClick={(e) => e.target === ref.current && onClose()}
         aria-label={title}
-        className={`sheet ${inline ? 'absolute z-30 max-h-[85%]' : 'fixed max-h-[85dvh]'} inset-x-0 top-auto bottom-0 m-0 mx-auto w-full max-w-[430px] overflow-hidden rounded-t-2xl bg-white p-0 text-satya-text shadow-2xl dark:bg-satya-dpanel dark:text-satya-dtext`}
+        className={`sheet ${inline ? 'absolute z-30 max-h-[85%]' : 'fixed max-h-[85dvh]'} inset-x-0 top-auto bottom-0 m-0 mx-auto w-full max-w-[430px] overflow-hidden rounded-t-2xl bg-white p-0 text-truth-text shadow-2xl dark:bg-truth-dpanel dark:text-truth-dtext`}
       >
         <motion.div
           drag="y" dragControls={drag} dragListener={false}

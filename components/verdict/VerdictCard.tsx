@@ -23,13 +23,13 @@ export function VerdictCard({ result, tail, at }: { result: CheckResult; tail?: 
         <div className="flex items-start justify-between gap-2">
           <VerdictChip verdict={result.overall} size="lg" />
           {result.demo && (
-            <span className="rounded bg-satya-lumi px-1.5 py-0.5 text-[10px] font-bold tracking-wider text-satya-text">
+            <span className="rounded bg-truth-lumi px-1.5 py-0.5 text-[10px] font-bold tracking-wider text-truth-text">
               {t.demoData}
             </span>
           )}
         </div>
         <p className="mt-2 text-[14.5px]">{result.overallSummary}</p>
-        <p className="mt-2 text-xs font-medium tracking-wide text-satya-muted uppercase dark:text-satya-dmuted">
+        <p className="mt-2 text-xs font-medium tracking-wide text-truth-muted uppercase dark:text-truth-dmuted">
           {t.claimsChecked(result.claims.length)}
         </p>
         <ul className="mt-1 divide-y divide-black/8 dark:divide-white/10">
@@ -41,7 +41,7 @@ export function VerdictCard({ result, tail, at }: { result: CheckResult; tail?: 
           <ListenButton />
           <button
             onClick={() => setReply(true)}
-            className="flex items-center gap-1 rounded-full px-2 py-1 text-sm font-medium text-satya-header hover:bg-satya-accent/10 dark:text-satya-accent"
+            className="flex items-center gap-1 rounded-full px-2 py-1 text-sm font-medium text-truth-header hover:bg-truth-accent/10 dark:text-truth-accent"
           >
             <Reply size={16} aria-hidden /> {t.replyToGroup}
           </button>
@@ -50,7 +50,7 @@ export function VerdictCard({ result, tail, at }: { result: CheckResult; tail?: 
               aria-label={t.helpful}
               aria-pressed={vote === 'up'}
               onClick={() => setVote(vote === 'up' ? null : 'up')}
-              className={`rounded-full p-1.5 ${vote === 'up' ? 'text-satya-accent' : 'text-satya-muted dark:text-satya-dmuted'}`}
+              className={`rounded-full p-1.5 ${vote === 'up' ? 'text-truth-accent' : 'text-truth-muted dark:text-truth-dmuted'}`}
             >
               <ThumbsUp size={16} fill={vote === 'up' ? 'currentColor' : 'none'} aria-hidden />
             </button>
@@ -58,7 +58,7 @@ export function VerdictCard({ result, tail, at }: { result: CheckResult; tail?: 
               aria-label={t.notHelpful}
               aria-pressed={vote === 'down'}
               onClick={() => setVote(vote === 'down' ? null : 'down')}
-              className={`rounded-full p-1.5 ${vote === 'down' ? 'text-[#E5484D]' : 'text-satya-muted dark:text-satya-dmuted'}`}
+              className={`rounded-full p-1.5 ${vote === 'down' ? 'text-[#E5484D]' : 'text-truth-muted dark:text-truth-dmuted'}`}
             >
               <ThumbsDown size={16} fill={vote === 'down' ? 'currentColor' : 'none'} aria-hidden />
             </button>
