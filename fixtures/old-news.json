@@ -1,0 +1,62 @@
+{
+  "id": "demo-old-news",
+  "checkedAt": "2026-10-12T09:30:00.000Z",
+  "policyVersion": "1.0",
+  "inputType": "text",
+  "detectedLang": "en",
+  "outputLang": "en",
+  "extractedText": "🚨 URGENT: All schools in the district will stay closed for the next 2 weeks from tomorrow due to heavy rain. - Collector's Office",
+  "overall": "OUTDATED",
+  "overallSummary": "This is an old notice from July 2024 being shared again. A newer notice from 10 October 2026 says schools are running normally.",
+  "claims": [
+    {
+      "id": "c1",
+      "text": "All schools in the district will stay closed for 2 weeks from tomorrow due to heavy rain.",
+      "verdict": "OUTDATED",
+      "oneLine": "This notice is from July 2024. Schools are running normally now.",
+      "whatsRight": ["A rain-related school closure notice was issued in July 2024."],
+      "whatsWrong": ["That closure ended long ago and does not apply now.", "A newer notice from October 2026 says schools are running as usual."],
+      "rationaleFacts": [
+        "A school closure notice due to heavy rain was issued in July 2024.",
+        "A notice dated 10 October 2026 says schools are running on their normal schedule."
+      ],
+      "limitations": [],
+      "evidence": [
+        {
+          "id": "e1", "publisher": "Demo Source", "title": "[DEMO] Schools shut for two weeks after heavy rain", "url": "#",
+          "publishedAt": "2024-07-18", "retrievedAt": "2026-10-12T09:30:00.000Z",
+          "excerpt": "[DEMO] Schools in the district will remain shut for two weeks after heavy rainfall, the Collector's office said.",
+          "relation": "SUPPORTS", "tier": "C", "via": "fixture"
+        },
+        {
+          "id": "e2", "publisher": "Demo Source", "title": "[DEMO] District notice: schools function as per normal calendar", "url": "#",
+          "publishedAt": "2026-10-10", "retrievedAt": "2026-10-12T09:30:00.000Z",
+          "excerpt": "[DEMO] All schools in the district are functioning as per the normal academic calendar.",
+          "relation": "SUPERSEDES", "tier": "A", "via": "fixture"
+        }
+      ]
+    }
+  ],
+  "replyMessage": "Thanks for the heads-up 🙏 I checked: this school-closure notice is from July 2024 and is being shared again. A newer notice dated 10 October 2026 says schools are running normally. Please check with the school before keeping children at home.",
+  "spokenSummary": "This forward is outdated. The school closure notice is from July 2024. A newer notice from 10 October 2026 says schools are running normally.",
+  "demo": true,
+  "match": ["school", "rain", "closed", "collector"],
+  "localized": {
+    "hi": {
+      "overallSummary": "यह जुलाई 2024 की पुरानी सूचना है जो फिर से शेयर हो रही है। 10 अक्टूबर 2026 की नई सूचना के अनुसार स्कूल सामान्य रूप से चल रहे हैं।",
+      "replyMessage": "जानकारी देने के लिए धन्यवाद 🙏 मैंने जाँचा: स्कूल बंद होने की यह सूचना जुलाई 2024 की है और फिर से शेयर हो रही है। 10 अक्टूबर 2026 की नई सूचना के अनुसार स्कूल सामान्य रूप से चल रहे हैं। बच्चों को घर रोकने से पहले स्कूल से पूछ लें।",
+      "spokenSummary": "यह फ़ॉरवर्ड पुरानी जानकारी है। स्कूल बंद होने की सूचना जुलाई 2024 की है। 10 अक्टूबर 2026 की नई सूचना के अनुसार स्कूल सामान्य रूप से चल रहे हैं।",
+      "claims": [
+        { "oneLine": "यह सूचना जुलाई 2024 की है। अभी स्कूल सामान्य रूप से चल रहे हैं।", "whatsRight": ["बारिश के कारण स्कूल बंद की सूचना जुलाई 2024 में जारी हुई थी।"], "whatsWrong": ["वह छुट्टी बहुत पहले ख़त्म हो चुकी है और अभी लागू नहीं है।", "अक्टूबर 2026 की नई सूचना कहती है कि स्कूल सामान्य रूप से चल रहे हैं।"] }
+      ]
+    },
+    "mr": {
+      "overallSummary": "ही जुलै 2024 ची जुनी सूचना पुन्हा शेअर होत आहे. 10 ऑक्टोबर 2026 च्या नव्या सूचनेनुसार शाळा नेहमीप्रमाणे सुरू आहेत.",
+      "replyMessage": "माहिती दिल्याबद्दल धन्यवाद 🙏 मी तपासले: शाळा बंदची ही सूचना जुलै 2024 ची आहे आणि पुन्हा शेअर होत आहे. 10 ऑक्टोबर 2026 च्या नव्या सूचनेनुसार शाळा नेहमीप्रमाणे सुरू आहेत. मुलांना घरी ठेवण्याआधी शाळेकडे चौकशी करा.",
+      "spokenSummary": "हा फॉरवर्ड जुनी माहिती आहे. शाळा बंदची सूचना जुलै 2024 ची आहे. 10 ऑक्टोबर 2026 च्या नव्या सूचनेनुसार शाळा नेहमीप्रमाणे सुरू आहेत.",
+      "claims": [
+        { "oneLine": "ही सूचना जुलै 2024 ची आहे. सध्या शाळा नेहमीप्रमाणे सुरू आहेत.", "whatsRight": ["पावसामुळे शाळा बंदची सूचना जुलै 2024 मध्ये जारी झाली होती."], "whatsWrong": ["ती सुट्टी खूप आधीच संपली आहे आणि आता लागू नाही.", "ऑक्टोबर 2026 च्या नव्या सूचनेनुसार शाळा नेहमीप्रमाणे सुरू आहेत."] }
+      ]
+    }
+  }
+}

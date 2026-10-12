@@ -1,0 +1,62 @@
+{
+  "id": "demo-verified-news",
+  "checkedAt": "2026-10-12T09:30:00.000Z",
+  "policyVersion": "1.0",
+  "inputType": "text",
+  "detectedLang": "en",
+  "outputLang": "en",
+  "extractedText": "Reminder 🏦 Banks remain closed on the second and fourth Saturday of every month. Plan your bank work accordingly!",
+  "overall": "VERIFIED",
+  "overallSummary": "This is true. Banks are closed on the second and fourth Saturday of every month.",
+  "claims": [
+    {
+      "id": "c1",
+      "text": "Banks are closed on the second and fourth Saturday of every month.",
+      "verdict": "VERIFIED",
+      "oneLine": "Yes, banks are closed on the 2nd and 4th Saturday of every month.",
+      "whatsRight": ["Banks are closed on the second and fourth Saturday of every month."],
+      "whatsWrong": [],
+      "rationaleFacts": [
+        "Banks are closed on the second and fourth Saturday of every month.",
+        "Banks are open on the other Saturdays unless there is a holiday."
+      ],
+      "limitations": [],
+      "evidence": [
+        {
+          "id": "e1", "publisher": "Demo Source", "title": "[DEMO] Bank holidays: second and fourth Saturdays", "url": "#",
+          "publishedAt": "2026-01-02", "retrievedAt": "2026-10-12T09:30:00.000Z",
+          "excerpt": "[DEMO] All banks shall remain closed on the second and fourth Saturdays of each month.",
+          "relation": "SUPPORTS", "tier": "A", "via": "fixture"
+        },
+        {
+          "id": "e2", "publisher": "Demo Source", "title": "[DEMO] Planning a bank visit? Check the Saturday rule", "url": "#",
+          "publishedAt": "2026-09-05", "retrievedAt": "2026-10-12T09:30:00.000Z",
+          "excerpt": "[DEMO] Bank branches stay shut on the 2nd and 4th Saturdays; other Saturdays are working days unless a holiday falls.",
+          "relation": "SUPPORTS", "tier": "C", "via": "fixture"
+        }
+      ]
+    }
+  ],
+  "replyMessage": "Good reminder, thank you 🙏 I checked and it's correct: banks are closed on the second and fourth Saturday of every month.",
+  "spokenSummary": "This forward is true. Banks are closed on the second and fourth Saturday of every month, and open on the other Saturdays unless there is a holiday.",
+  "demo": true,
+  "match": ["saturday", "bank", "rbi"],
+  "localized": {
+    "hi": {
+      "overallSummary": "यह सही है। हर महीने के दूसरे और चौथे शनिवार को बैंक बंद रहते हैं।",
+      "replyMessage": "अच्छी याद दिलाई, धन्यवाद 🙏 मैंने जाँचा और यह सही है: हर महीने के दूसरे और चौथे शनिवार को बैंक बंद रहते हैं।",
+      "spokenSummary": "यह फ़ॉरवर्ड सही है। हर महीने के दूसरे और चौथे शनिवार को बैंक बंद रहते हैं, और बाकी शनिवार को खुले रहते हैं, जब तक कोई छुट्टी न हो।",
+      "claims": [
+        { "oneLine": "हाँ, हर महीने के दूसरे और चौथे शनिवार को बैंक बंद रहते हैं।", "whatsRight": ["हर महीने के दूसरे और चौथे शनिवार को बैंक बंद रहते हैं।"], "whatsWrong": [] }
+      ]
+    },
+    "mr": {
+      "overallSummary": "हे खरे आहे. दर महिन्याच्या दुसऱ्या आणि चौथ्या शनिवारी बँका बंद असतात.",
+      "replyMessage": "छान आठवण करून दिलीत, धन्यवाद 🙏 मी तपासले आणि हे बरोबर आहे: दर महिन्याच्या दुसऱ्या आणि चौथ्या शनिवारी बँका बंद असतात.",
+      "spokenSummary": "हा फॉरवर्ड खरा आहे. दर महिन्याच्या दुसऱ्या आणि चौथ्या शनिवारी बँका बंद असतात, आणि सुट्टी नसल्यास इतर शनिवारी सुरू असतात.",
+      "claims": [
+        { "oneLine": "हो, दर महिन्याच्या दुसऱ्या आणि चौथ्या शनिवारी बँका बंद असतात.", "whatsRight": ["दर महिन्याच्या दुसऱ्या आणि चौथ्या शनिवारी बँका बंद असतात."], "whatsWrong": [] }
+      ]
+    }
+  }
+}

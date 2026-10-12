@@ -1,0 +1,83 @@
+{
+  "id": "demo-health-tip",
+  "checkedAt": "2026-10-12T09:30:00.000Z",
+  "policyVersion": "1.0",
+  "inputType": "text",
+  "detectedLang": "en",
+  "outputLang": "en",
+  "extractedText": "Doctors in Japan have confirmed 🇯🇵 drinking hot water with lemon every morning kills the corona and dengue virus in the body! Share with everyone, it can save a life 🍋🙏",
+  "overall": "FALSE",
+  "overallSummary": "This is false. Lemon water is safe to drink, but it does not kill corona or dengue viruses, and there is no such confirmation from doctors in Japan.",
+  "claims": [
+    {
+      "id": "c1",
+      "text": "Hot water with lemon kills corona and dengue viruses in the body.",
+      "verdict": "FALSE",
+      "oneLine": "No, lemon water does not kill corona or dengue viruses.",
+      "whatsRight": [],
+      "whatsWrong": ["Lemon water does not kill corona or dengue viruses in the body."],
+      "rationaleFacts": [
+        "Health authorities say lemon water does not kill or cure corona or dengue infections.",
+        "Drinking warm lemon water is generally safe, but it is not a treatment.",
+        "People with fever or illness should consult a doctor."
+      ],
+      "limitations": [],
+      "evidence": [
+        {
+          "id": "e1", "publisher": "Demo Source", "title": "[DEMO] Health advisory: home remedies and viral infections", "url": "#",
+          "publishedAt": "2026-08-14", "retrievedAt": "2026-10-12T09:30:00.000Z",
+          "excerpt": "[DEMO] There is no evidence that lemon water or hot drinks kill viruses in the body. Consult a doctor if you have fever.",
+          "relation": "CONTRADICTS", "tier": "A", "via": "fixture"
+        },
+        {
+          "id": "e2", "publisher": "Demo Source", "title": "[DEMO] Fact check: Hot lemon water does not kill viruses", "url": "#",
+          "publishedAt": "2026-09-02", "retrievedAt": "2026-10-12T09:30:00.000Z",
+          "excerpt": "[DEMO] The viral message claiming hot lemon water kills corona and dengue viruses is false.",
+          "relation": "CONTRADICTS", "tier": "B", "via": "fixture"
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "text": "Doctors in Japan confirmed this.",
+      "verdict": "FALSE",
+      "oneLine": "No such confirmation exists. Fact-checkers call it a hoax.",
+      "whatsRight": [],
+      "whatsWrong": ["Fact-checkers found no study or statement from doctors in Japan saying this."],
+      "rationaleFacts": ["Fact-checkers found no statement from doctors in Japan supporting this message."],
+      "limitations": [],
+      "evidence": [
+        {
+          "id": "e3", "publisher": "Demo Source", "title": "[DEMO] Fact check: No 'Japanese doctors' behind lemon water claim", "url": "#",
+          "publishedAt": "2026-09-02", "retrievedAt": "2026-10-12T09:30:00.000Z",
+          "excerpt": "[DEMO] No medical body or study in Japan made this claim. The attribution is invented.",
+          "relation": "CONTRADICTS", "tier": "B", "via": "fixture"
+        }
+      ]
+    }
+  ],
+  "replyMessage": "Thank you for caring about everyone's health 🙏 I checked this one: hot water with lemon does not kill corona or dengue viruses, and fact-checkers found no such statement from doctors in Japan. Lemon water is fine to drink, but for fever please see a doctor.",
+  "spokenSummary": "This forward is false. Health authorities say lemon water does not kill corona or dengue viruses. It is safe to drink, but it is not a treatment. For fever, please see a doctor.",
+  "demo": true,
+  "match": ["lemon", "nimbu", "dengue", "corona", "virus"],
+  "localized": {
+    "hi": {
+      "overallSummary": "यह गलत है। नींबू पानी पीना सुरक्षित है, लेकिन यह कोरोना या डेंगू वायरस को नहीं मारता, और जापान के डॉक्टरों की ऐसी कोई पुष्टि नहीं मिली।",
+      "replyMessage": "सबकी सेहत की फ़िक्र करने के लिए धन्यवाद 🙏 मैंने जाँचा: गर्म नींबू पानी कोरोना या डेंगू वायरस को नहीं मारता, और फ़ैक्ट-चेकर्स को जापान के डॉक्टरों का ऐसा कोई बयान नहीं मिला। नींबू पानी पीना ठीक है, लेकिन बुख़ार हो तो डॉक्टर को ज़रूर दिखाएँ।",
+      "spokenSummary": "यह फ़ॉरवर्ड गलत है। स्वास्थ्य विभाग के अनुसार नींबू पानी कोरोना या डेंगू वायरस को नहीं मारता। इसे पीना सुरक्षित है, पर यह इलाज नहीं है। बुख़ार हो तो डॉक्टर को दिखाएँ।",
+      "claims": [
+        { "oneLine": "नहीं, नींबू पानी कोरोना या डेंगू वायरस को नहीं मारता।", "whatsRight": [], "whatsWrong": ["नींबू पानी शरीर में कोरोना या डेंगू वायरस को नहीं मारता।"] },
+        { "oneLine": "ऐसी कोई पुष्टि नहीं है। फ़ैक्ट-चेकर्स इसे झूठा संदेश बताते हैं।", "whatsRight": [], "whatsWrong": ["फ़ैक्ट-चेकर्स को जापान के डॉक्टरों का ऐसा कोई अध्ययन या बयान नहीं मिला।"] }
+      ]
+    },
+    "mr": {
+      "overallSummary": "हे खोटे आहे. लिंबूपाणी पिणे सुरक्षित आहे, पण ते कोरोना किंवा डेंग्यूचे विषाणू मारत नाही, आणि जपानच्या डॉक्टरांची अशी कोणतीही पुष्टी मिळाली नाही.",
+      "replyMessage": "सगळ्यांच्या आरोग्याची काळजी घेतल्याबद्दल धन्यवाद 🙏 मी तपासले: गरम लिंबूपाणी कोरोना किंवा डेंग्यूचे विषाणू मारत नाही, आणि फॅक्ट-चेकर्सना जपानच्या डॉक्टरांचे असे कोणतेही विधान मिळाले नाही. लिंबूपाणी पिणे ठीक आहे, पण ताप असल्यास डॉक्टरांना नक्की दाखवा.",
+      "spokenSummary": "हा फॉरवर्ड खोटा आहे. आरोग्य विभागानुसार लिंबूपाणी कोरोना किंवा डेंग्यूचे विषाणू मारत नाही. ते पिणे सुरक्षित आहे, पण तो उपचार नाही. ताप असल्यास डॉक्टरांना दाखवा.",
+      "claims": [
+        { "oneLine": "नाही, लिंबूपाणी कोरोना किंवा डेंग्यूचे विषाणू मारत नाही.", "whatsRight": [], "whatsWrong": ["लिंबूपाणी शरीरातील कोरोना किंवा डेंग्यूचे विषाणू मारत नाही."] },
+        { "oneLine": "अशी कोणतीही पुष्टी नाही. फॅक्ट-चेकर्स याला खोटा संदेश म्हणतात.", "whatsRight": [], "whatsWrong": ["फॅक्ट-चेकर्सना जपानच्या डॉक्टरांचा असा कोणताही अभ्यास किंवा विधान मिळाले नाही."] }
+      ]
+    }
+  }
+}

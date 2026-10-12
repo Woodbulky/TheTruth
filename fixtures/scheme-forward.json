@@ -1,0 +1,99 @@
+{
+  "id": "demo-scheme-forward",
+  "checkedAt": "2026-10-12T09:30:00.000Z",
+  "policyVersion": "1.0",
+  "inputType": "text",
+  "detectedLang": "en",
+  "outputLang": "en",
+  "extractedText": "*BIG NEWS* 🎉 Government has launched the Sakhi Card scheme for women! Every woman will get ₹5,000 every month directly in her bank account. Last date to register is 31 October. Forward to all the women in your family!! 🙏",
+  "overall": "PARTLY_SUPPORTED",
+  "overallSummary": "The Sakhi Card scheme is real and the 31 October deadline is right, but the ₹5,000 is a one-time payment for eligible households, not every month for every woman.",
+  "claims": [
+    {
+      "id": "c1",
+      "text": "The government has launched the Sakhi Card scheme for women.",
+      "verdict": "VERIFIED",
+      "oneLine": "Yes, the scheme was officially announced.",
+      "whatsRight": ["The Sakhi Card scheme was officially announced for women."],
+      "whatsWrong": [],
+      "rationaleFacts": ["An official notice announces the Sakhi Card scheme for women."],
+      "limitations": [],
+      "evidence": [
+        {
+          "id": "e1", "publisher": "Demo Source", "title": "[DEMO] Official notice: Sakhi Card scheme launched", "url": "#",
+          "publishedAt": "2026-09-28", "retrievedAt": "2026-10-12T09:30:00.000Z",
+          "excerpt": "[DEMO] The Sakhi Card scheme has been launched to support women from eligible households.",
+          "relation": "SUPPORTS", "tier": "A", "via": "fixture"
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "text": "Every woman will get ₹5,000 every month in her bank account.",
+      "verdict": "PARTLY_SUPPORTED",
+      "oneLine": "The ₹5,000 is real, but it's paid once and only to eligible households.",
+      "whatsRight": ["The scheme does pay ₹5,000 into the bank account."],
+      "whatsWrong": ["It is paid once, not every month.", "Only women from eligible low-income households qualify, not every woman."],
+      "rationaleFacts": ["The scheme pays ₹5,000 one time by direct bank transfer.", "Only women from eligible low-income households qualify."],
+      "limitations": [],
+      "evidence": [
+        {
+          "id": "e2", "publisher": "Demo Source", "title": "[DEMO] Sakhi Card scheme: eligibility and benefits", "url": "#",
+          "publishedAt": "2026-09-28", "retrievedAt": "2026-10-12T09:30:00.000Z",
+          "excerpt": "[DEMO] Eligible women receive one-time assistance of ₹5,000 by direct bank transfer. Eligibility is limited to low-income households.",
+          "relation": "NARROWS", "tier": "A", "via": "fixture"
+        },
+        {
+          "id": "e3", "publisher": "Demo Source", "title": "[DEMO] Fact check: Is Sakhi Card paying ₹5,000 every month?", "url": "#",
+          "publishedAt": "2026-10-05", "retrievedAt": "2026-10-12T09:30:00.000Z",
+          "excerpt": "[DEMO] Forwards saying every woman gets ₹5,000 a month are misleading. The payment is one-time and only for eligible households.",
+          "relation": "NARROWS", "tier": "B", "via": "fixture"
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "text": "The last date to register is 31 October.",
+      "verdict": "VERIFIED",
+      "oneLine": "Correct, registration closes on 31 October 2026.",
+      "whatsRight": ["Registration for the scheme closes on 31 October 2026."],
+      "whatsWrong": [],
+      "rationaleFacts": ["Registration for the scheme closes on 31 October 2026."],
+      "limitations": [],
+      "evidence": [
+        {
+          "id": "e4", "publisher": "Demo Source", "title": "[DEMO] Sakhi Card registration schedule", "url": "#",
+          "publishedAt": "2026-09-28", "retrievedAt": "2026-10-12T09:30:00.000Z",
+          "excerpt": "[DEMO] Applications will be accepted until 31 October 2026.",
+          "relation": "SUPPORTS", "tier": "A", "via": "fixture"
+        }
+      ]
+    }
+  ],
+  "replyMessage": "Thanks for sharing this 🙏 I checked it: the Sakhi Card scheme is real and registration closes on 31 October 2026. But the ₹5,000 is paid only once, and only to women from eligible low-income households, not every month to every woman. Please read the official notice before applying.",
+  "spokenSummary": "This forward is partly true. The Sakhi Card scheme is real, and registration closes on 31 October 2026. But the ₹5,000 is paid only once, and only to women from eligible low-income households.",
+  "demo": true,
+  "match": ["sakhi", "5,000", "5000", "scheme", "yojana"],
+  "localized": {
+    "hi": {
+      "overallSummary": "सखी कार्ड योजना असली है और 31 अक्टूबर की आख़िरी तारीख़ भी सही है, लेकिन ₹5,000 सिर्फ़ एक बार मिलते हैं, वह भी केवल पात्र परिवारों की महिलाओं को। हर महीने हर महिला को नहीं।",
+      "replyMessage": "शेयर करने के लिए धन्यवाद 🙏 मैंने जाँचा: सखी कार्ड योजना असली है और रजिस्ट्रेशन 31 अक्टूबर 2026 तक है। लेकिन ₹5,000 सिर्फ़ एक बार मिलते हैं, और केवल पात्र कम आय वाले परिवारों की महिलाओं को, हर महीने हर महिला को नहीं। आवेदन से पहले आधिकारिक सूचना ज़रूर पढ़ें।",
+      "spokenSummary": "यह फ़ॉरवर्ड आंशिक रूप से सही है। सखी कार्ड योजना असली है और रजिस्ट्रेशन 31 अक्टूबर 2026 तक है। लेकिन ₹5,000 सिर्फ़ एक बार मिलते हैं, और केवल पात्र कम आय वाले परिवारों की महिलाओं को।",
+      "claims": [
+        { "oneLine": "हाँ, योजना की आधिकारिक घोषणा हुई है।", "whatsRight": ["महिलाओं के लिए सखी कार्ड योजना की आधिकारिक घोषणा हुई है।"], "whatsWrong": [] },
+        { "oneLine": "₹5,000 सही है, पर यह एक बार मिलता है और सिर्फ़ पात्र परिवारों को।", "whatsRight": ["योजना में बैंक खाते में ₹5,000 मिलते हैं।"], "whatsWrong": ["यह पैसा एक बार मिलता है, हर महीने नहीं।", "केवल पात्र कम आय वाले परिवारों की महिलाएँ योग्य हैं, हर महिला नहीं।"] },
+        { "oneLine": "सही, रजिस्ट्रेशन 31 अक्टूबर 2026 को बंद होगा।", "whatsRight": ["योजना का रजिस्ट्रेशन 31 अक्टूबर 2026 को बंद होगा।"], "whatsWrong": [] }
+      ]
+    },
+    "mr": {
+      "overallSummary": "सखी कार्ड योजना खरी आहे आणि 31 ऑक्टोबरची शेवटची तारीखही बरोबर आहे, पण ₹5,000 फक्त एकदाच मिळतात, तेही फक्त पात्र कुटुंबांतील महिलांना. दर महिन्याला प्रत्येक महिलेला नाही.",
+      "replyMessage": "शेअर केल्याबद्दल धन्यवाद 🙏 मी तपासले: सखी कार्ड योजना खरी आहे आणि नोंदणी 31 ऑक्टोबर 2026 पर्यंत आहे. पण ₹5,000 फक्त एकदाच मिळतात, आणि फक्त पात्र कमी उत्पन्न असलेल्या कुटुंबांतील महिलांना, दर महिन्याला प्रत्येक महिलेला नाही. अर्ज करण्याआधी अधिकृत सूचना नक्की वाचा.",
+      "spokenSummary": "हा फॉरवर्ड अंशतः खरा आहे. सखी कार्ड योजना खरी आहे आणि नोंदणी 31 ऑक्टोबर 2026 पर्यंत आहे. पण ₹5,000 फक्त एकदाच मिळतात, आणि फक्त पात्र कमी उत्पन्न असलेल्या कुटुंबांतील महिलांना.",
+      "claims": [
+        { "oneLine": "हो, योजनेची अधिकृत घोषणा झाली आहे.", "whatsRight": ["महिलांसाठी सखी कार्ड योजनेची अधिकृत घोषणा झाली आहे."], "whatsWrong": [] },
+        { "oneLine": "₹5,000 बरोबर आहे, पण ते एकदाच आणि फक्त पात्र कुटुंबांना मिळतात.", "whatsRight": ["योजनेत बँक खात्यात ₹5,000 मिळतात."], "whatsWrong": ["हे पैसे एकदाच मिळतात, दर महिन्याला नाही.", "फक्त पात्र कमी उत्पन्न असलेल्या कुटुंबांतील महिला पात्र आहेत, प्रत्येक महिला नाही."] },
+        { "oneLine": "बरोबर, नोंदणी 31 ऑक्टोबर 2026 रोजी बंद होईल.", "whatsRight": ["योजनेची नोंदणी 31 ऑक्टोबर 2026 रोजी बंद होईल."], "whatsWrong": [] }
+      ]
+    }
+  }
+}
