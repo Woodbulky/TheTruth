@@ -10,6 +10,19 @@ simple explanation in EN/HI/MR, a "listen" button, and a ready-to-paste polite r
 family group. Users can also **call Lumi** (ElevenLabs Agent) and talk to her.
 A public **landing page** (`/`) introduces SATYA and Lumi; the chat lives at `/chat`.
 
+## Build status (see PROMPTS.md for the phase prompts)
+
+| Phase | Status |
+|---|---|
+| 1 · Chat shell on demo fixtures | ✅ Done |
+| 2 · Lumi illustrated avatar + `/demo` screenshot gallery | ✅ Done |
+| 3 · Landing page | ✅ Built early (all sections, EN/HI/MR, live demo phone). OG *image* still TODO (OG text metadata is set) |
+| 4 · Real verification pipeline | ⏭ Next |
+| 5–7 · Voice, Call Lumi, hardening | ⏳ |
+
+Decisions on 2026-10-12: **light theme is the default** (dark is opt-in, never follows the OS);
+the landing page was pulled forward from Phase 3.
+
 ---
 
 ## Golden rules (never break these)
@@ -26,6 +39,7 @@ A public **landing page** (`/`) introduces SATYA and Lumi; the chat lives at `/c
 9. **Additive changes only.** Don't rewrite working components; extend them. Don't change `lib/types.ts` without being asked.
 10. Mobile-first (360–430px). Chat/call on desktop show a centered phone column + side info panel; the landing page is full-width responsive.
 11. **Default language is English** (UI, outputLang, TTS voice, agent). HI/MR are opt-in via the language pill.
+12. **Default theme is light.** Dark mode is opt-in (chat menu / landing nav toggle) and saved; it does not follow the OS setting.
 
 ---
 
@@ -76,7 +90,7 @@ satya: {
 
 - Font: system stack (`ui-sans-serif, -apple-system, "Segoe UI", Roboto, "Noto Sans Devanagari", sans-serif`).
 - Chat wallpaper: ORIGINAL subtle SVG pattern (tiny magnifier, check, clock, quote glyphs at 6% opacity). Generate it ourselves.
-- Dark mode via `class` strategy, toggle in menu, default = system.
+- Dark mode via `class` strategy, toggle in chat menu + landing nav, default = **light** (OS preference is ignored).
 - Bubbles: 7.5px radius, tail on first bubble of a group, timestamp + ticks bottom-right.
 
 ### Verdict system (colour is never the only signal: icon + label + text always)
@@ -169,17 +183,18 @@ Copy comes from `lib/i18n.ts` and follows the EN/हिं/मरा switch. No 
 
 ```
 app/
-  page.tsx                 # Landing page
+  page.tsx                 # Landing page (Nav, Hero, ForwardTypes, Steps, VerdictShowcase, Languages, TrustGrid, CtaBand, Footer)
   chat/page.tsx            # Chat with Lumi (main app screen)
   call/page.tsx            # Voice call with Lumi (ElevenLabs Agent)
-  demo/page.tsx            # Screenshot gallery for PPT (all states in phone frames)
+  demo/page.tsx            # Screenshot gallery for PPT (all states in phone frames) + Lumi playground
+  demo/Gallery.tsx         # frames + html-to-image "Download PNG"
   api/check/route.ts       # POST -> SSE stream of StageEvents, ends with CheckResult
   api/tts/route.ts         # POST {text, lang} -> audio/mpeg (cached)
   api/transcribe/route.ts  # POST multipart audio -> {text, language, words}
   api/lumi/signed-url/route.ts  # GET -> {signedUrl} for the agent
 components/
   lumi/Lumi.tsx
-  landing/Hero.tsx LiveDemoPhone.tsx Steps.tsx VerdictShowcase.tsx TrustGrid.tsx Footer.tsx
+  landing/Hero.tsx (+Nav) LiveDemoPhone.tsx Steps.tsx (+ForwardTypes) VerdictShowcase.tsx TrustGrid.tsx (+Languages, CtaBand) Footer.tsx
   chat/Chat.tsx            # chat state + check flow (demo now, /api/check in Phase 4)
   chat/SidePanel.tsx       # desktop info panel beside the phone column
   chat/ChatHeader.tsx ChatInput.tsx MessageList.tsx Bubble.tsx
@@ -188,7 +203,7 @@ components/
   verdict/VerdictCard.tsx VerdictChip.tsx ClaimRow.tsx ClaimSheet.tsx EvidenceCard.tsx
   verdict/ReplyComposer.tsx ListenButton.tsx
   call/CallScreen.tsx Captions.tsx
-  ui/Sheet.tsx             # bottom sheet on native <dialog> (ClaimSheet, ReplyComposer)
+  ui/Sheet.tsx             # bottom sheet on native <dialog> (ClaimSheet, ReplyComposer); InlineSheets context renders it inside /demo frames
   ui/useDismiss.ts         # outside-click / Escape for menus
 lib/
   types.ts  policy.ts  tiers.ts  i18n.ts  llm.ts  factcheck.ts  extract.ts  pipeline.ts

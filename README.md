@@ -5,7 +5,7 @@ Hack On Track 2026 · PS3 "Is This Forward True". See `CLAUDE.md` for the full s
 ```bash
 pnpm install
 cp .env.example .env.local   # NEXT_PUBLIC_DEMO_MODE=true needs no keys
-pnpm dev                     # http://localhost:3000  (/chat, /call)
+pnpm dev                     # http://localhost:3000  (/, /chat, /call, /demo)
 pnpm build
 ```
 

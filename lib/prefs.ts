@@ -19,10 +19,3 @@ export const nextLang = (l: Lang): Lang => LANGS[(LANGS.indexOf(l) + 1) % LANGS.
 const isDark = () => document.documentElement.classList.contains('dark');
 export const useDark = () => useSyncExternalStore(subscribe, isDark, () => false);
 export function setDark(d: boolean) { document.documentElement.classList.toggle('dark', d); write('satya-theme', d ? 'dark' : 'light'); emit(); }
-
-if (typeof window !== 'undefined') {
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    if (!read('satya-theme')) { document.documentElement.classList.toggle('dark', e.matches); emit(); }
-  });
-}
-

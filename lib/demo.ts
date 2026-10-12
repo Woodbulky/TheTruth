@@ -58,6 +58,10 @@ function localize(f: Fixture, lang: Lang, inputType: InputType): CheckResult {
   };
 }
 
+/** Finished fixture result, synchronously (for /demo screenshot frames). Keeps the fixture's own checkedAt. */
+export const fixtureResult = (id: Exclude<FixtureId, 'unclear-forward'>, lang: Lang): CheckResult =>
+  ({ ...localize(RESULTS[id], lang, 'text'), checkedAt: RESULTS[id].checkedAt });
+
 export const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 const STEPS = [['extract', 600], ['claims', 900], ['search', 1500], ['judge', 1000], ['explain', 700]] as const;

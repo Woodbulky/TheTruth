@@ -19,6 +19,7 @@ export function Chat() {
   const [msgs, setMsgs] = useState<Msg[]>([]);
   const [busy, setBusy] = useState(false);
   const [mood, setMood] = useState<Verdict>();
+  const [asking, setAsking] = useState(false);
   const run = useRef(0); // bumped by "clear chat" so an in-flight check stops writing
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -42,6 +43,8 @@ export function Chat() {
         setTimeout(() => run.current === token && setMood(undefined), 2000);
       } else if (ev.stage === 'error') {
         put({ id, at: Date.now(), from: 'lumi', kind: 'more' });
+        setAsking(true);
+        setTimeout(() => setAsking(false), 2000);
       } else {
         stages = { ...stages, [ev.stage]: ev.status };
         put({ id, at: Date.now(), from: 'lumi', kind: 'stage', stages });
@@ -66,7 +69,7 @@ export function Chat() {
 
   return (
     <>
-      <ChatHeader lumi={busy ? 'thinking' : mood ? 'reacting' : 'idle'} mood={mood} busy={busy} onDemo={demo} onClear={clear} />
+      <ChatHeader lumi={busy ? 'thinking' : mood ? 'reacting' : 'idle'} mood={mood} asking={asking} busy={busy} onDemo={demo} onClear={clear} />
       <MessageList msgs={msgs} busy={busy} onDemo={demo} onMore={more} />
       <ChatInput busy={busy} inputRef={inputRef} onSend={send} onAttach={attach} />
     </>

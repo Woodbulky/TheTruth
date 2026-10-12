@@ -32,8 +32,10 @@ export function MessageList({ msgs, busy, onDemo, onMore }: {
   const end = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Scroll only the log itself (scrollIntoView would also scroll the page, e.g. /demo frames).
+    const log = end.current?.parentElement;
     const smooth = !matchMedia('(prefers-reduced-motion: reduce)').matches;
-    end.current?.scrollIntoView({ block: 'end', behavior: smooth ? 'smooth' : 'auto' });
+    log?.scrollTo({ top: log.scrollHeight, behavior: smooth ? 'smooth' : 'auto' });
   }, [msgs]);
 
   return (

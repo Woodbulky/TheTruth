@@ -3,7 +3,7 @@ import { BookOpenText, Gavel, MessageSquareText, ScanSearch, Search } from 'luci
 import { STR } from '@/lib/i18n';
 import { useLang } from '@/lib/prefs';
 
-const STEP_ICONS = [BookOpenText, ScanSearch, Search, Gavel, MessageSquareText];
+export const STEP_ICONS = [BookOpenText, ScanSearch, Search, Gavel, MessageSquareText];
 
 /** Desktop-only (≥1024px) info panel beside the phone column. */
 export function SidePanel() {

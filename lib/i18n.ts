@@ -33,6 +33,18 @@ export interface Strings {
   howLumiChecks: string;
   steps: { title: string; body: string }[];
   callSoon: string; chatWithLumi: string;
+  landing: {
+    nav: { how: string; verdicts: string; languages: string };
+    eyebrow: string; sub: string; lumiSays: string; demoLabel: string; lightMode: string;
+    forwardTitle: string; forwardSub: string;
+    inputs: Record<'text' | 'image' | 'audio' | 'pdf' | 'url', { title: string; body: string }>;
+    howSub: string;
+    verdictsTitle: string; verdictsSub: string; meaning: Record<Verdict, string>; noVerdict: string;
+    langTitle: string; langSub: string;
+    trustTitle: string; trust: { title: string; body: string }[];
+    ctaTitle: string; ctaSub: string;
+    builtBy: string; disclaimer: string;
+  };
 }
 
 const en: Strings = {
@@ -80,6 +92,46 @@ const en: Strings = {
     { title: 'Explain', body: 'A simple explanation and a polite reply for your group.' },
   ],
   callSoon: 'Calls with Lumi are coming soon. Chat with her for now!', chatWithLumi: 'Chat with Lumi',
+  landing: {
+    nav: { how: 'How it works', verdicts: 'Verdicts', languages: 'Languages' },
+    eyebrow: 'Fact-checks for family group forwards',
+    sub: 'Send Lumi any forward: text, screenshot, voice note, PDF or link. She finds dated evidence from official sources and fact-checkers, gives a clear verdict, and writes a polite reply for your group.',
+    lumiSays: 'Got a forward? Send it to me!',
+    demoLabel: 'Live demo: Lumi checking a forwarded message',
+    lightMode: 'Light mode',
+    forwardTitle: 'Forward it however it reached you',
+    forwardSub: 'No copying text out by hand. Lumi reads all of these.',
+    inputs: {
+      text: { title: 'Text', body: 'Paste or forward the message as it is.' },
+      image: { title: 'Screenshot', body: 'Lumi reads the text inside the image.' },
+      audio: { title: 'Voice note', body: 'She listens and writes it down first.' },
+      pdf: { title: 'PDF', body: 'Notices and circulars, page by page.' },
+      url: { title: 'Link', body: 'She opens the page safely and reads it.' },
+    },
+    howSub: 'Every step shows up live in the chat, so you can see the work.',
+    verdictsTitle: 'Four clear verdicts',
+    verdictsSub: 'Always an icon, a label and the reason, never colour alone.',
+    meaning: {
+      VERIFIED: 'Reliable sources confirm it.',
+      FALSE: 'Reliable sources show it is wrong.',
+      OUTDATED: 'It was true once, but newer information replaced it.',
+      PARTLY_SUPPORTED: 'Some of it is right; some is wrong or missing context.',
+    },
+    noVerdict: 'Not enough to go on? Lumi never guesses. She asks for the full message, a clearer screenshot or the link it came from.',
+    langTitle: "Speaks your family's language",
+    langSub: 'Explanations, voice and the ready-to-paste reply in English, Hindi and Marathi.',
+    trustTitle: 'Why you can trust Lumi',
+    trust: [
+      { title: 'Evidence before verdict', body: 'Every verdict links to the dated sources it came from.' },
+      { title: 'No invented sources', body: 'Only links returned by real searches and fact-check databases are shown.' },
+      { title: 'Rules decide, not AI', body: 'AI reads the evidence; fixed, tested rules pick the verdict.' },
+      { title: 'Polite, never shaming', body: 'Replies correct the message, not the person who sent it.' },
+    ],
+    ctaTitle: 'Got a forward right now?',
+    ctaSub: 'Check it in seconds, before it reaches the family group.',
+    builtBy: 'Built by',
+    disclaimer: 'Lumi can be wrong. For health, legal or money matters, confirm with an official source or professional.',
+  },
 };
 
 const hi: Strings = {
@@ -127,6 +179,46 @@ const hi: Strings = {
     { title: 'समझाना', body: 'आसान भाषा में समझाती है और ग्रुप के लिए विनम्र जवाब देती है।' },
   ],
   callSoon: 'लूमी से कॉल जल्द शुरू होगी। तब तक चैट करें!', chatWithLumi: 'लूमी से चैट करें',
+  landing: {
+    nav: { how: 'कैसे काम करता है', verdicts: 'फ़ैसले', languages: 'भाषाएँ' },
+    eyebrow: 'फ़ैमिली ग्रुप के फ़ॉरवर्ड की जाँच',
+    sub: 'लूमी को कोई भी फ़ॉरवर्ड भेजें: टेक्स्ट, स्क्रीनशॉट, वॉइस नोट, PDF या लिंक। वह सरकारी स्रोतों और फ़ैक्ट-चेकर्स से तारीख़ वाले सबूत ढूँढती है, साफ़ फ़ैसला देती है, और आपके ग्रुप के लिए विनम्र जवाब लिखती है।',
+    lumiSays: 'कोई फ़ॉरवर्ड मिला? मुझे भेजिए!',
+    demoLabel: 'लाइव डेमो: लूमी एक फ़ॉरवर्ड जाँच रही है',
+    lightMode: 'लाइट मोड',
+    forwardTitle: 'जैसे मिला, वैसे ही भेजें',
+    forwardSub: 'हाथ से टाइप करने की ज़रूरत नहीं। लूमी ये सब पढ़ लेती है।',
+    inputs: {
+      text: { title: 'टेक्स्ट', body: 'संदेश जैसा है वैसा पेस्ट या फ़ॉरवर्ड करें।' },
+      image: { title: 'स्क्रीनशॉट', body: 'लूमी तस्वीर के अंदर का टेक्स्ट पढ़ती है।' },
+      audio: { title: 'वॉइस नोट', body: 'वह पहले सुनकर लिख लेती है।' },
+      pdf: { title: 'PDF', body: 'नोटिस और सर्कुलर, पेज दर पेज।' },
+      url: { title: 'लिंक', body: 'वह पेज को सुरक्षित तरीके से खोलकर पढ़ती है।' },
+    },
+    howSub: 'हर कदम चैट में लाइव दिखता है, ताकि आप काम देख सकें।',
+    verdictsTitle: 'चार साफ़ फ़ैसले',
+    verdictsSub: 'हमेशा आइकन, लेबल और कारण के साथ, सिर्फ़ रंग से नहीं।',
+    meaning: {
+      VERIFIED: 'भरोसेमंद स्रोत इसकी पुष्टि करते हैं।',
+      FALSE: 'भरोसेमंद स्रोत बताते हैं कि यह गलत है।',
+      OUTDATED: 'कभी सही था, पर अब नई जानकारी आ चुकी है।',
+      PARTLY_SUPPORTED: 'कुछ बातें सही हैं; कुछ गलत हैं या संदर्भ अधूरा है।',
+    },
+    noVerdict: 'जानकारी कम है? लूमी कभी अंदाज़ा नहीं लगाती। वह पूरा संदेश, साफ़ स्क्रीनशॉट या उसका लिंक माँगती है।',
+    langTitle: 'आपके परिवार की भाषा में',
+    langSub: 'समझाना, आवाज़ और पेस्ट करने लायक जवाब: अंग्रेज़ी, हिंदी और मराठी में।',
+    trustTitle: 'लूमी पर भरोसा क्यों करें',
+    trust: [
+      { title: 'पहले सबूत, फिर फ़ैसला', body: 'हर फ़ैसला उन तारीख़ वाले स्रोतों से जुड़ा है जिनसे वह आया।' },
+      { title: 'कोई मनगढ़ंत स्रोत नहीं', body: 'सिर्फ़ असली खोज और फ़ैक्ट-चेक डेटाबेस से मिले लिंक दिखते हैं।' },
+      { title: 'फ़ैसला नियम करते हैं, AI नहीं', body: 'AI सबूत पढ़ता है; तय और परखे हुए नियम फ़ैसला चुनते हैं।' },
+      { title: 'विनम्र, कभी शर्मिंदा नहीं', body: 'जवाब संदेश को सुधारता है, भेजने वाले को नहीं।' },
+    ],
+    ctaTitle: 'अभी कोई फ़ॉरवर्ड आया है?',
+    ctaSub: 'फ़ैमिली ग्रुप तक पहुँचने से पहले, सेकंडों में जाँचें।',
+    builtBy: 'बनाने वाले',
+    disclaimer: 'लूमी से भी गलती हो सकती है। स्वास्थ्य, कानूनी या पैसों से जुड़े मामलों में किसी सरकारी स्रोत या विशेषज्ञ से पुष्टि करें।',
+  },
 };
 
 const mr: Strings = {
@@ -174,6 +266,46 @@ const mr: Strings = {
     { title: 'स्पष्टीकरण', body: 'सोप्या भाषेत समजावते आणि ग्रुपसाठी नम्र उत्तर देते.' },
   ],
   callSoon: 'लूमीशी कॉल लवकरच सुरू होईल. तोपर्यंत चॅट करा!', chatWithLumi: 'लूमीशी चॅट करा',
+  landing: {
+    nav: { how: 'कसे काम करते', verdicts: 'निर्णय', languages: 'भाषा' },
+    eyebrow: 'फॅमिली ग्रुपमधील फॉरवर्डची तपासणी',
+    sub: 'लूमीला कोणताही फॉरवर्ड पाठवा: टेक्स्ट, स्क्रीनशॉट, व्हॉइस नोट, PDF किंवा लिंक. ती सरकारी स्रोत आणि फॅक्ट-चेकर्सकडून तारखेसह पुरावे शोधते, स्पष्ट निर्णय देते आणि तुमच्या ग्रुपसाठी नम्र उत्तर लिहिते.',
+    lumiSays: 'फॉरवर्ड आलाय? मला पाठवा!',
+    demoLabel: 'लाइव्ह डेमो: लूमी एक फॉरवर्ड तपासत आहे',
+    lightMode: 'लाइट मोड',
+    forwardTitle: 'जसा आला, तसाच पाठवा',
+    forwardSub: 'हाताने टाइप करायची गरज नाही. लूमी हे सगळे वाचते.',
+    inputs: {
+      text: { title: 'टेक्स्ट', body: 'संदेश जसा आहे तसा पेस्ट किंवा फॉरवर्ड करा.' },
+      image: { title: 'स्क्रीनशॉट', body: 'लूमी चित्रातील मजकूर वाचते.' },
+      audio: { title: 'व्हॉइस नोट', body: 'ती आधी ऐकून लिहून घेते.' },
+      pdf: { title: 'PDF', body: 'नोटीस आणि परिपत्रके, पानोपानी.' },
+      url: { title: 'लिंक', body: 'ती पान सुरक्षितपणे उघडून वाचते.' },
+    },
+    howSub: 'प्रत्येक टप्पा चॅटमध्ये लाइव्ह दिसतो, त्यामुळे काम तुम्हाला दिसते.',
+    verdictsTitle: 'चार स्पष्ट निर्णय',
+    verdictsSub: 'नेहमी आयकॉन, लेबल आणि कारणासह, फक्त रंगावरून नाही.',
+    meaning: {
+      VERIFIED: 'विश्वासार्ह स्रोत याला दुजोरा देतात.',
+      FALSE: 'विश्वासार्ह स्रोत दाखवतात की हे चुकीचे आहे.',
+      OUTDATED: 'एकेकाळी खरे होते, पण आता नवी माहिती आली आहे.',
+      PARTLY_SUPPORTED: 'काही भाग खरा आहे; काही चुकीचा आहे किंवा संदर्भ अपुरा आहे.',
+    },
+    noVerdict: 'माहिती अपुरी आहे? लूमी कधीही अंदाज लावत नाही. ती पूर्ण संदेश, स्पष्ट स्क्रीनशॉट किंवा त्याची लिंक मागते.',
+    langTitle: 'तुमच्या कुटुंबाच्या भाषेत',
+    langSub: 'स्पष्टीकरण, आवाज आणि पेस्ट करण्यासाठी तयार उत्तर: इंग्रजी, हिंदी आणि मराठीत.',
+    trustTitle: 'लूमीवर विश्वास का ठेवावा',
+    trust: [
+      { title: 'आधी पुरावा, मग निर्णय', body: 'प्रत्येक निर्णय तो ज्या तारखेसह स्रोतांवरून आला त्यांच्याशी जोडलेला असतो.' },
+      { title: 'कोणतेही बनावट स्रोत नाहीत', body: 'फक्त खऱ्या शोधातून आणि फॅक्ट-चेक डेटाबेसमधून आलेल्या लिंक दिसतात.' },
+      { title: 'निर्णय नियम घेतात, AI नाही', body: 'AI पुरावे वाचते; ठरलेले, तपासलेले नियम निर्णय निवडतात.' },
+      { title: 'नम्र, कधीही अपमान नाही', body: 'उत्तर संदेश दुरुस्त करते, पाठवणाऱ्याला नाही.' },
+    ],
+    ctaTitle: 'आत्ता एखादा फॉरवर्ड आलाय?',
+    ctaSub: 'फॅमिली ग्रुपपर्यंत पोहोचण्याआधी, काही सेकंदात तपासा.',
+    builtBy: 'बनवणारे',
+    disclaimer: 'लूमीकडूनही चूक होऊ शकते. आरोग्य, कायदेशीर किंवा पैशांच्या बाबतीत सरकारी स्रोत किंवा तज्ज्ञांकडून खात्री करा.',
+  },
 };
 
 export const STR: Record<Lang, Strings> = { en, hi, mr };

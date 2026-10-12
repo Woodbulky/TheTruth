@@ -5,7 +5,7 @@ Phases 1–3 = Round 1 (PPT + live link, zero API keys needed). Phases 4–7 = p
 
 ---
 
-## Phase 1 — Frontend shell on mock data (deploy today)
+## Phase 1 — Frontend shell on mock data (deploy today) ✅ DONE
 
 ```
 Read CLAUDE.md fully. Scaffold the Next.js app exactly as specified (App Router, TS, Tailwind,
@@ -46,7 +46,11 @@ Build with NEXT_PUBLIC_DEMO_MODE=true only — no API calls in this phase.
 Then: pnpm build, fix all errors, and give me the Vercel deploy steps.
 ```
 
-## Phase 2 — Lumi avatar + PPT screenshot route
+## Phase 2 — Lumi avatar + PPT screenshot route ✅ DONE
+
+> Done 2026-10-12. Lumi.tsx is the illustrated SVG (all layer ids, 5 states, moods, volume, blink,
+> reduced motion, <48px simplification, plus an `asking` prop for the "send me more" nod). /demo has the
+> Lumi playground + 12 frames incl. the landing hero. Light theme became the default.
 
 ```
 Read CLAUDE.md "Lumi" section. Build components/lumi/Lumi.tsx: Lumi is a female assistant —
@@ -69,7 +73,7 @@ This page is for PPT screenshots (add the landing page hero to the grid after Ph
 pnpm build, then commit.
 ```
 
-## Phase 3 — Landing page
+## Phase 3 — Landing page ✅ BUILT EARLY (only the OG image is left)
 
 ```
 Read CLAUDE.md "Landing page" and "Lumi". Replace the app/page.tsx placeholder with the full

@@ -9,10 +9,10 @@ import type { Verdict } from '@/lib/types';
 import { Lumi, type LumiState } from '@/components/lumi/Lumi';
 import { useDismiss } from '@/components/ui/useDismiss';
 
-const LANG_SHORT = { en: 'EN', hi: 'हिं', mr: 'मरा' } as const;
+export const LANG_SHORT = { en: 'EN', hi: 'हिं', mr: 'मरा' } as const;
 
-export function ChatHeader({ lumi, mood, busy, onDemo, onClear }: {
-  lumi: LumiState; mood?: Verdict; busy: boolean; onDemo: (id: FixtureId) => void; onClear: () => void;
+export function ChatHeader({ lumi, mood, asking, busy, onDemo, onClear }: {
+  lumi: LumiState; mood?: Verdict; asking?: boolean; busy: boolean; onDemo: (id: FixtureId) => void; onClear: () => void;
 }) {
   const lang = useLang();
   const dark = useDark();
@@ -31,7 +31,7 @@ export function ChatHeader({ lumi, mood, busy, onDemo, onClear }: {
         <ArrowLeft size={22} aria-hidden />
       </Link>
       <span className="relative">
-        <Lumi size={36} state={lumi} mood={mood} />
+        <Lumi size={36} state={lumi} mood={mood} asking={asking} />
         <span aria-hidden className="absolute right-0 bottom-0 size-2.5 rounded-full border-2 border-satya-header bg-satya-green dark:border-satya-dpanel" />
       </span>
       <div className="ml-2 min-w-0 flex-1 leading-tight">
