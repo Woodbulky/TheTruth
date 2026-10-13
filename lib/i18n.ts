@@ -30,6 +30,8 @@ export interface Strings {
   demoForwards: string; darkMode: string; clearChat: string;
   moreInfo: string;
   moreChips: { paste: string; screenshot: string; link: string };
+  readThis: string; readHint: string; checkIt: string; checkFailed: string;
+  replyFallback: (summary: string) => string;
   howLumiChecks: string;
   steps: { title: string; body: string }[];
   callSoon: string; chatWithLumi: string;
@@ -82,6 +84,9 @@ const en: Strings = {
   verdict: { VERIFIED: 'Verified', FALSE: 'False', OUTDATED: 'Outdated', PARTLY_SUPPORTED: 'Partly true' },
   demoForwards: 'Demo forwards', darkMode: 'Dark mode', clearChat: 'Clear chat',
   moreInfo: "I'd love to check this, but I need a little more to go on. 🙂 Could you send me one of these?",
+  readThis: 'Lumi read this:', readHint: 'Fix anything I misread, then tap “Check it”.', checkIt: 'Check it',
+  checkFailed: "I couldn't reach my sources just now. Please try again in a minute.",
+  replyFallback: (s) => `Thanks for sharing 🙏 I checked this: ${s} Let's confirm with an official source before forwarding.`,
   moreChips: { paste: 'Paste the full message', screenshot: 'Send a clearer screenshot', link: 'Share the link it came from' },
   howLumiChecks: 'How Lumi checks',
   steps: [
@@ -169,6 +174,9 @@ const hi: Strings = {
   verdict: { VERIFIED: 'सही है', FALSE: 'गलत है', OUTDATED: 'पुरानी जानकारी', PARTLY_SUPPORTED: 'आंशिक रूप से सही' },
   demoForwards: 'डेमो फ़ॉरवर्ड', darkMode: 'डार्क मोड', clearChat: 'चैट साफ़ करें',
   moreInfo: 'मैं इसे ज़रूर जाँचना चाहूँगी, बस थोड़ी और जानकारी चाहिए। 🙂 क्या आप इनमें से कुछ भेज सकते हैं?',
+  readThis: 'लूमी ने यह पढ़ा:', readHint: 'जो गलत पढ़ा हो उसे ठीक करें, फिर “जाँचें” दबाएँ।', checkIt: 'जाँचें',
+  checkFailed: 'अभी मैं अपने स्रोतों तक नहीं पहुँच पाई। कृपया एक मिनट बाद फिर कोशिश करें।',
+  replyFallback: (s) => `शेयर करने के लिए धन्यवाद 🙏 मैंने जाँचा: ${s} आगे भेजने से पहले किसी आधिकारिक स्रोत से पुष्टि कर लें।`,
   moreChips: { paste: 'पूरा संदेश पेस्ट करें', screenshot: 'साफ़ स्क्रीनशॉट भेजें', link: 'जिस लिंक से आया, वह भेजें' },
   howLumiChecks: 'लूमी कैसे जाँचती है',
   steps: [
@@ -256,6 +264,9 @@ const mr: Strings = {
   verdict: { VERIFIED: 'खरे आहे', FALSE: 'खोटे आहे', OUTDATED: 'जुनी माहिती', PARTLY_SUPPORTED: 'अंशतः खरे' },
   demoForwards: 'डेमो फॉरवर्ड', darkMode: 'डार्क मोड', clearChat: 'चॅट साफ करा',
   moreInfo: 'मला हे नक्की तपासायचे आहे, फक्त थोडी अधिक माहिती हवी आहे. 🙂 यापैकी काही पाठवाल का?',
+  readThis: 'लूमीने हे वाचले:', readHint: 'चुकीचे वाचले असेल ते दुरुस्त करा, मग “तपासा” दाबा.', checkIt: 'तपासा',
+  checkFailed: 'आत्ता मला माझ्या स्रोतांपर्यंत पोहोचता आले नाही. कृपया एका मिनिटाने पुन्हा प्रयत्न करा.',
+  replyFallback: (s) => `शेअर केल्याबद्दल धन्यवाद 🙏 मी तपासले: ${s} पुढे पाठवण्याआधी अधिकृत स्रोताकडून खात्री करूया.`,
   moreChips: { paste: 'पूर्ण संदेश पेस्ट करा', screenshot: 'स्पष्ट स्क्रीनशॉट पाठवा', link: 'तो कुठून आला ती लिंक पाठवा' },
   howLumiChecks: 'लूमी कसे तपासते',
   steps: [

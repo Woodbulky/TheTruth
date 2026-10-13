@@ -1,7 +1,15 @@
 import { Bubble } from './Bubble';
 
-/** Demo-mode screenshot: a drawn notice card rather than a real image file. */
-export function ImageBubble({ text, label, tail, at }: { text: string; label: string; tail?: boolean; at: number }) {
+/** Uploaded screenshot (`src`), or in demo mode a drawn notice card rather than a real image file. */
+export function ImageBubble({ text, src, label, tail, at }: { text: string; src?: string; label: string; tail?: boolean; at: number }) {
+  if (src) {
+    return (
+      <Bubble side="out" tail={tail} at={at} className="p-1!">
+        {/* eslint-disable-next-line @next/next/no-img-element -- local blob: URL, nothing for next/image to optimise */}
+        <img src={src} alt={`${label}: ${text}`} className="block max-h-80 w-60 rounded-[5px] object-cover" />
+      </Bubble>
+    );
+  }
   return (
     <Bubble side="out" tail={tail} at={at} className="p-1!">
       <figure role="img" aria-label={`${label}: ${text}`} className="w-60 overflow-hidden rounded-[5px] bg-white text-left text-truth-text">

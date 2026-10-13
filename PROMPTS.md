@@ -90,7 +90,9 @@ landing page using components/landing/*:
 pnpm build, then commit + deploy.
 ```
 
-## Phase 4 — Real verification pipeline
+## Phase 4 — Real verification pipeline ✅
+
+> Done 2026-10-13. Groq Compound and llama-4-scout no longer exist: search uses gpt-oss `browser_search`, vision uses qwen3.8 (see CLAUDE.md "Stack").
 
 ```
 Read CLAUDE.md "Stack", "Pipeline", "Verdict policy", "Source tiers". Implement:

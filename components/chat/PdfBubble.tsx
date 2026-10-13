@@ -10,7 +10,7 @@ export function PdfBubble({ name, pages, tail, at }: { name: string; pages: stri
         </span>
         <span className="min-w-0">
           <span className="block truncate font-medium">{name}</span>
-          <span className="text-xs text-truth-muted dark:text-truth-dmuted">{pages} · PDF</span>
+          <span className="text-xs text-truth-muted dark:text-truth-dmuted">{pages ? `${pages} · ` : ''}PDF</span>
         </span>
       </span>
     </Bubble>

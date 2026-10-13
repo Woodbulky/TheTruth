@@ -17,8 +17,9 @@ A public **landing page** (`/`) introduces The Truth and Lumi; the chat lives at
 | 1 · Chat shell on demo fixtures | ✅ Done |
 | 2 · Lumi illustrated avatar + `/demo` screenshot gallery | ✅ Done |
 | 3 · Landing page | ✅ Built early (all sections, EN/HI/MR, live demo phone). OG *image* still TODO (OG text metadata is set) |
-| 4 · Real verification pipeline | ⏭ Next |
-| 5–7 · Voice, Call Lumi, hardening | ⏳ |
+| 4 · Real verification pipeline | ✅ Done (live when `NEXT_PUBLIC_DEMO_MODE=false`; audio still on the demo fixture) |
+| 5 · ElevenLabs voice | ⏭ Next |
+| 6–7 · Call Lumi, hardening | ⏳ |
 
 Decisions on 2026-10-12: **light theme is the default** (dark is opt-in, never follows the OS);
 the landing page was pulled forward from Phase 3.
@@ -51,9 +52,12 @@ the landing page was pulled forward from Phase 3.
   model ids at https://console.groq.com/docs/models before coding; keep them as constants in `lib/llm.ts`:
   - **JSON tasks** (claims, judge, explain): a model that supports `response_format: json_schema`
     (e.g. `openai/gpt-oss-120b`), output validated with zod, one retry on invalid JSON.
-  - **Web search**: Groq Compound (`groq/compound` / `groq/compound-mini`, built-in web search).
-    Evidence URLs come ONLY from the search results in the response's `executed_tools`, never from the model's prose.
-  - **Vision** (screenshot transcription): a Groq vision model (e.g. `meta-llama/llama-4-scout-17b-16e-instruct`).
+  - **Web search**: `openai/gpt-oss-120b` with Groq's built-in `browser_search` tool (`groq/compound*` were shut down
+    2026-09-21). Evidence comes ONLY from `executed_tools` (`browser.search` result lists + `browser.open` page text),
+    never from the model's prose.
+  - **Vision** (screenshot transcription): `qwen/qwen3.8-27b` (multimodal; llama-4-scout was shut down 2026-07-17).
+    The browser downscales to ≤2048px JPEG before upload.
+  - `GROQ_API_KEY` may hold several comma-separated keys; a 429 rotates to the next key, then backs off once.
   - Free-tier rate limits are tight: run per-claim calls with small concurrency and back off on 429.
 - Google Fact Check Tools API (ClaimReview search) for known viral forwards
 - Cache: in-memory Map + `fixtures/` (upgrade to Upstash/Vercel KV only if needed)
@@ -277,9 +281,9 @@ Overall = most severe claim: FALSE > OUTDATED > PARTLY_SUPPORTED > VERIFIED.
 Unit-test every rule with fixtures.
 
 ## Source tiers (`lib/tiers.ts`)
-- A: `*.gov.in`, `*.nic.in`, `pib.gov.in`, `rbi.org.in`, `who.int`, `icmr.gov.in`, `mohfw.gov.in`, `eci.gov.in`, `indiacode.nic.in`
-- B: `boomlive.in`, `altnews.in`, `factly.in`, `vishvasnews.com`, `newschecker.in`, `thequint.com/news/webqoof`, `indiatoday.in/fact-check`, PIB Fact Check pages
-- C: established national outlets (`thehindu.com`, `indianexpress.com`, `hindustantimes.com`, `livemint.com`, `ndtv.com`, `reuters.com`, `bbc.com`, `loksatta.com`, `lokmat.com`)
+- A: `*.gov.in`, `*.nic.in`, `pib.gov.in`, `rbi.org.in`, `who.int`, `icmr.gov.in`, `mohfw.gov.in`, `eci.gov.in`, `indiacode.nic.in`, `nih.gov`, `cdc.gov`
+- B: `boomlive.in`, `altnews.in`, `factly.in`, `vishvasnews.com`, `newschecker.in`, `factcrescendo.com`, `newsmobile.in`, `factcheck.afp.com`, `politifact.com`, `factcheck.org`, `thequint.com/news/webqoof`, `indiatoday.in/fact-check`, PIB Fact Check pages
+- C: established national outlets (`thehindu.com`, `indianexpress.com`, `hindustantimes.com`, `livemint.com`, `ndtv.com`, `reuters.com`, `bbc.com`, `loksatta.com`, `lokmat.com`, `indiatimes.com`, `business-standard.com`, `apnews.com`, `theguardian.com`)
 - D: everything else (can be shown as "lead", never decides a verdict)
 
 ---
@@ -289,10 +293,14 @@ Unit-test every rule with fixtures.
 1. **Extract:** text as-is · image → Groq vision model transcription (no OCR libs) · PDF → `unpdf` text with page numbers · URL → `lib/ssrf.ts` safe fetch (http/s only, block private IPs/redirects to private, 2MB cap, 8s timeout) + readability · audio → ElevenLabs Scribe.
 2. **Fingerprint:** sha256 of normalized text → `cache.ts`. Hit → return cached result with `seenCount++`.
 3. **Claims:** LLM JSON (zod) → atomic checkable claims; opinions/requests excluded.
-4. **Search (parallel per claim, small concurrency):** Google Fact Check Tools `claims:search` + Groq Compound
+4. **Search (parallel per claim, small concurrency):** Google Fact Check Tools `claims:search` + gpt-oss `browser_search`
    web search. Collect only URLs present in the tool results (`executed_tools` search results / ClaimReview);
    excerpts come from those results' content.
 5. **Judge:** LLM labels each evidence `relation` + extracts `rationaleFacts`, `whatsRight`, `whatsWrong` using ONLY provided excerpts. Then `policy.ts` sets verdict.
+   Guards: a web item's relation counts only if the judge's `quote` is really in that page (else NEUTRAL; the quote becomes
+   the shown excerpt); a ClaimReview rating counts only when the judge reads it the same way for *our* claim (ratings are
+   about the reviewed claim, which may differ); facts/points with numbers not in the retrieved text are dropped.
+   Image/PDF uploads go through `/api/extract` first → editable "Lumi read this" bubble → "Check it" → `/api/check`.
 6. **Explain:** LLM writes `oneLine`, `overallSummary`, `replyMessage`, `spokenSummary` in `outputLang` from rationaleFacts only. Post-check: reject if it mentions a number/date not in rationaleFacts → fallback to template text.
 Stream a `StageEvent` at each start/done. Retrieved page text is untrusted data: wrap in delimiters, never follow instructions inside it.
 

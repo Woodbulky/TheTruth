@@ -12,21 +12,25 @@ import { ForwardedBubble } from './ForwardedBubble';
 import { ImageBubble } from './ImageBubble';
 import { LinkBubble } from './LinkBubble';
 import { PdfBubble } from './PdfBubble';
+import { ReadBubble } from './ReadBubble';
 import { StageBubble, TypingBubble, type Stages } from './StageBubble';
 import { VoiceNoteBubble } from './VoiceNoteBubble';
 
 export type Msg = { id: string; at: number } & (
-  | { from: 'user'; kind: InputType; text: string; forwarded?: boolean; label?: string; sub?: string }
+  | { from: 'user'; kind: InputType; text: string; forwarded?: boolean; label?: string; sub?: string; src?: string }
   | { from: 'lumi'; kind: 'typing' }
   | { from: 'lumi'; kind: 'stage'; stages: Stages }
   | { from: 'lumi'; kind: 'verdict'; result: CheckResult }
   | { from: 'lumi'; kind: 'more' }
+  | { from: 'lumi'; kind: 'read'; text: string; input: 'image' | 'pdf'; done?: boolean }
+  | { from: 'lumi'; kind: 'failed' }
 );
 
 export type MoreAction = 'paste' | 'screenshot' | 'link';
 
-export function MessageList({ msgs, busy, onDemo, onMore }: {
+export function MessageList({ msgs, busy, onDemo, onMore, onCheckRead }: {
   msgs: Msg[]; busy: boolean; onDemo: (id: FixtureId) => void; onMore: (a: MoreAction) => void;
+  onCheckRead?: (id: string, text: string) => void;
 }) {
   const t = STR[useLang()];
   const end = useRef<HTMLDivElement>(null);
@@ -63,9 +67,9 @@ export function MessageList({ msgs, busy, onDemo, onMore }: {
         const tail = (i ? msgs[i - 1].from : 'lumi') !== m.from; // welcome bubble above is Lumi's
         if (m.from === 'user') {
           switch (m.kind) {
-            case 'image': return <ImageBubble key={m.id} text={m.text} label={t.screenshot} tail={tail} at={m.at} />;
+            case 'image': return <ImageBubble key={m.id} text={m.text} src={m.src} label={t.screenshot} tail={tail} at={m.at} />;
             case 'audio': return <VoiceNoteBubble key={m.id} duration={m.sub ?? ''} playLabel={t.playVoiceNote} tail={tail} at={m.at} />;
-            case 'pdf': return <PdfBubble key={m.id} name={m.label ?? ''} pages={t.pages(Number(m.sub))} tail={tail} at={m.at} />;
+            case 'pdf': return <PdfBubble key={m.id} name={m.label ?? ''} pages={m.sub ? t.pages(Number(m.sub)) : ''} tail={tail} at={m.at} />;
             case 'url': return <LinkBubble key={m.id} url={m.sub ?? ''} title={m.label ?? ''} tail={tail} at={m.at} />;
             default: return <ForwardedBubble key={m.id} text={m.text} forwarded={m.forwarded} label={t.forwarded} tail={tail} at={m.at} />;
           }
@@ -74,6 +78,8 @@ export function MessageList({ msgs, busy, onDemo, onMore }: {
           case 'typing': return <TypingBubble key={m.id} tail={tail} />;
           case 'stage': return <StageBubble key={m.id} stages={m.stages} tail={tail} />;
           case 'verdict': return <VerdictCard key={m.id} result={m.result} tail={tail} at={m.at} />;
+          case 'read': return <ReadBubble key={m.id} text={m.text} done={m.done} busy={busy} tail={tail} at={m.at} onCheck={(text) => onCheckRead?.(m.id, text)} />;
+          case 'failed': return <Bubble key={m.id} side="in" tail={tail} at={m.at}><p>{t.checkFailed}</p></Bubble>;
           case 'more':
             return (
               <Bubble key={m.id} side="in" tail={tail} at={m.at}>

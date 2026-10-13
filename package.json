@@ -6,15 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "vitest run"
   },
   "dependencies": {
     "framer-motion": "^14.1.0",
+    "groq-sdk": "^1.6.0",
     "html-to-image": "^1.11.13",
     "lucide-react": "^1.55.0",
     "next": "16.4.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
+    "unpdf": "^1.8.1",
     "zod": "^4.6.6"
   },
   "devDependencies": {
@@ -25,7 +28,8 @@
     "eslint": "^9",
     "eslint-config-next": "16.4.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^5.0.4"
   },
   "packageManager": "pnpm@10.27.0"
 }
